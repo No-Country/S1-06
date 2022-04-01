@@ -3,6 +3,6 @@ exclude =
   env
   migrations
   __pycache__,
-  ./store/models/__init__.py,
+  ./users/models/__init__.py,
   manage.py,
   settings.py
