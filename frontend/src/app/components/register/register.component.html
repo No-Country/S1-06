@@ -1,1 +1,69 @@
-<p style="color: red">register works!</p>
+<div class="container mb-5" style="width:max-content">
+    <div class="container-fluid text-warning centrar mt-5 rounded">
+        <h1>CREA TU CUENTA</h1>
+    </div>
+</div>
+
+<div class="container mt-5 mb-4 pb-3">
+    <form class="row g-3 bg-dark rounded">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label text-white">Correo electrónico</label>
+          <input type="email" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Correo electrónico">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label text-white">Nombre completo</label>
+            <input type="email" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Nombre completo">
+          </div>
+        <div class="col-6">
+          <label for="inputAddress" class="form-label text-white">Apellido</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputAddress" placeholder="Apellido">
+        </div>
+        <div class="col-6">
+          <label for="inputAddress2" class="form-label text-white">Descripción</label>
+          <textarea class="form-control bg-dark text-white" placeholder="Agrega una breve descripción" id="floatingTextarea"  name="sobreTi"></textarea>
+        </div>
+
+        <div class="col-md-4">
+            <label for="inputState" class="form-label text-white">Nacionalidad</label>
+            <select id="inputState" class="form-select bg-dark text-white">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label text-white">Provincia</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Provincia">
+        </div>
+        
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label text-white">Código postal</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Código postal">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label text-white">Contraseña</label>
+            <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Contraseña">
+          </div>
+          <div class="col-md-6">
+              <label for="inputEmail4" class="form-label text-white">Repetir contraseña</label>
+              <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Repetir contraseña">
+            </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label text-white" for="gridCheck">
+              Términos y condiciones*
+            </label>
+          </div>
+        </div>
+
+        <div class="col-12 centrar">
+            <div class="d-grid gap-2 col-3 mx-3">
+                <button class="btn btn-secondary text-white" type="button" style="font-weight: bold" onclick="window.history.go(-1);">VOLVER</button>
+              </div>
+              <div class="d-grid gap-2 col-3"> <button class="btn btn-outline-warning text-white " style="font-weight: bold" type="button">ACEPTAR</button></div>
+        </div>
+      </form>
+</div>
+
+<div class="col-12 fixed-bottom"><app-footer></app-footer></div>
+
