@@ -1,28 +1,34 @@
-<div class="container mb-5" style="width:max-content">
+<div class="container mb-2" style="width:max-content">
     <!--Título-->
     <div class="container-fluid text-warning centrar mt-5 rounded">
         <h1>CREA TU CUENTA</h1>
     </div>
 </div>
 
-<div class="container mt-5 mb-4 pb-3">
+<div class="container mt-0 mb-4 pb-3">
     <form #f="ngForm" (ngSubmit)="f.form.valid" class="row g-3 bg-dark rounded">
+
+        <div class="col-6">
+          <h4 class="text-white">Tus datos: </h4> 
+        </div>
+
+        <div class="col-6"><small class="text-white d-flex justify-content-end">(*) Obligatorio</small></div>
 
         <!--Correo electrónico-->
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label text-white">Correo electrónico</label>
+          <label for="inputEmail4" class="form-label text-white">Correo electrónico *</label>
           <input type="email" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Correo electrónico" autocomplete="off" required name="email" [(ngModel)]="email">
         </div>
 
         <!--Nombre completo-->
         <div class="col-md-6">
-            <label for="inputEmail4" class="form-label text-white">Nombre completo</label>
+            <label for="inputEmail4" class="form-label text-white">Nombre completo *</label>
             <input type="text" class="form-control bg-dark text-white" id="inputName" placeholder="Nombre completo" autocomplete="off" required name="name" [(ngModel)]="name">
           </div>
 
         <!--Apellido-->
         <div class="col-6">
-          <label for="inputAddress" class="form-label text-white">Apellido</label>
+          <label for="inputAddress" class="form-label text-white">Apellido *</label>
           <input type="text" class="form-control bg-dark text-white" id="inputAddress" placeholder="Apellido" autocomplete="off" required  name="surname" [(ngModel)]="surname">
         </div>
 
@@ -34,7 +40,7 @@
 
         <!--País-->
         <div class="col-md-4">
-            <label for="inputState" class="form-label text-white">País</label>
+            <label for="inputState" class="form-label text-white">País *</label>
             <select id="inputState" class="form-select bg-dark text-white" required name="nationality" [(ngModel)]="nationality">
               <option selected>Choose...</option>
               <option>...</option>
@@ -43,25 +49,25 @@
 
         <!--Provincia-->
         <div class="col-md-6">
-          <label for="inputCity" class="form-label text-white">Provincia</label>
+          <label for="inputCity" class="form-label text-white">Provincia *</label>
           <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Provincia" autocomplete="off" required name="state" [(ngModel)]="state">
         </div>
         
         <!--Código postal-->
         <div class="col-md-2">
-          <label for="inputZip" class="form-label text-white">Código postal</label>
+          <label for="inputZip" class="form-label text-white">Código postal *</label>
           <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Código postal" autocomplete="off" required name="code" [(ngModel)]="code">
         </div>
 
         <!--Contraseña-->
         <div class="col-md-6">
-            <label for="inputEmail4" class="form-label text-white">Contraseña</label>
-            <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Contraseña" required name="password"  [(ngModel)]="password">
+            <label for="inputEmail4" class="form-label text-white">Contraseña *</label>
+            <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Contraseña" required name="password"  [(ngModel)]="password" (input)="equalpass()">
           </div>
 
           <!--Repetir contraseña-->
           <div class="col-md-6">
-              <label for="inputEmail4" class="form-label text-white">Repetir contraseña</label>
+              <label for="inputEmail4" class="form-label text-white">Repetir contraseña *</label>
               <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Repetir contraseña" required name="tpassword" [(ngModel)]="tpassword" (input)="equalpass()">
               <span class="text-warning mt-3 centrar" *ngIf="checkpass==false">Las contraseñas deben coincidir</span>
             </div>
@@ -69,7 +75,7 @@
           <!--Términos y condiciones-->
         <div class="col-12">
           <div class="form-check text-white">
-            <input class="form-check-input " type="checkbox" id="gridCheck" (change)="checkterminos()">Acepto los <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-warning">términos y condiciones*</a>
+            <input class="form-check-input " type="checkbox" id="gridCheck" (change)="checkterminos()">Acepto los <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-warning">términos y condiciones *</a>
           </div>
         </div>
 
@@ -81,6 +87,7 @@
           <!--Botón aceptar-->
               <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white " style="font-weight: bold" type="submit" [disabled]="!f.form.valid || terminos == false || checkpass == false">ACEPTAR</button></div>
         </div>
+        <div class="col-md-12 text-white">¿Ya tienes una cuenta? <a [routerLink]='["/iniciar-sesión"]' class="text-warning"> Inicia sesión.</a></div>
       </form>
 </div>
 

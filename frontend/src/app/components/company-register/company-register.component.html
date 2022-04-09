@@ -1,77 +1,106 @@
-<div class="container mb-5" style="width:max-content">
-    <!--Título-->
-    <div class="container-fluid text-warning centrar mt-5 rounded">
-        <h1>SOLICITUD DE CUENTA DE EMPRESA</h1>
-    </div>
+<div class="container-fluid row mt-4">
+  <div class="col-md-12 text-warning centrar "><h1 class="centrar">SOLICITUD DE CREACIÓN DE CUENTA</h1></div>
 </div>
 
-<div class="container mt-5 mb-4 pb-3">
+<div class="container mt-3 mb-4 pb-3">
     <form #f="ngForm" (ngSubmit)="f.form.valid" class="row g-3 bg-dark rounded">
+
+        <div class="col-6"><h4 class="text-white">Datos de la empresa:</h4></div>
+        <div class="col-6"><small class="text-white d-flex justify-content-end">(*) Obligatorio</small></div>
 
         <!--Correo electrónico-->
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label text-white">Correo electrónico</label>
-          <input type="email" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Correo electrónico" autocomplete="off" required name="email" >
+          <label for="inputEmail4" class="form-label text-white">Correo electrónico *</label>
+          <input type="email" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Correo electrónico" autocomplete="off" required name="email" [(ngModel)]="email">
         </div>
 
-        <!--Nombre completo-->
+        <!--Razón social-->
         <div class="col-md-6">
-            <label for="inputEmail4" class="form-label text-white">Razón social</label>
-            <input type="text" class="form-control bg-dark text-white" id="inputName" placeholder="Razón social" autocomplete="off" required name="Razon-Social">
+            <label for="inputEmail4" class="form-label text-white">Razón social *</label>
+            <input type="text" class="form-control bg-dark text-white" id="inputName" placeholder="Razón social" autocomplete="off" required name="razonSocial" [(ngModel)]="razonSocial">
           </div>
 
-        <!--Apellido-->
+        <!--Teléfono-->
         <div class="col-6">
-          <label for="inputAddress" class="form-label text-white">Apellido</label>
-          <input type="text" class="form-control bg-dark text-white" id="inputAddress" placeholder="Apellido" autocomplete="off" required  name="surname">
+          <label for="inputAddress" class="form-label text-white">Teléfono *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputAddress" placeholder="Teléfono" autocomplete="off" required  name="phone" [(ngModel)]="phone">
         </div>
 
         <!--Descripción-->
         <div class="col-6">
-          <label for="inputAddress2" class="form-label text-white">Descripción</label>
-          <textarea class="form-control bg-dark text-white" placeholder="Agrega una breve descripción" id="floatingTextarea"  name="description"></textarea>
+          <label for="inputAddress2" class="form-label text-white">Descripción *</label>
+          <textarea class="form-control bg-dark text-white" placeholder="Agrega una breve descripción" id="floatingTextarea"  name="description" [(ngModel)]="description" required></textarea>
         </div>
+
+        <!--Contraseña-->
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label text-white">Contraseña *</label>
+          <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Contraseña" required name="password" [(ngModel)]="password" (input)="equalpass()">
+        </div>
+
+        <!--Repetir contraseña-->
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label text-white">Repetir contraseña *</label>
+            <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Repetir contraseña" required name="tpassword" [(ngModel)]="tpassword" (input)="equalpass()">
+            <span class="text-warning mt-3 centrar" *ngIf="checkpass==false">Las contraseñas deben coincidir</span>
+          </div>
+
+        <!--Título oficinas-->
+        <h4 class="text-white">Ubicación de las oficinas:</h4>
 
         <!--País-->
         <div class="col-md-4">
-            <label for="inputState" class="form-label text-white">País</label>
-            <select id="inputState" class="form-select bg-dark text-white" required name="nationality">
+            <label for="inputState" class="form-label text-white">País *</label>
+            <select id="inputState" class="form-select bg-dark text-white" required name="country" [(ngModel)]="country">
               <option selected>Choose...</option>
               <option>...</option>
             </select>
           </div>
 
         <!--Provincia-->
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label text-white">Provincia</label>
-          <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Provincia" autocomplete="off" required name="state" >
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label text-white">Provincia *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Provincia" autocomplete="off" required name="state" [(ngModel)]="state">
         </div>
         
-        <!--Código postal-->
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label text-white">Código postal</label>
-          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Código postal" autocomplete="off" required name="code"> 
+        <!--Localidad-->
+        <div class="col-md-4">
+          <label for="inputZip" class="form-label text-white">Localidad *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Localidad" autocomplete="off" required name="locality" [(ngModel)]="locality"> 
         </div>
 
-        <!--Contraseña-->
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label text-white">Contraseña</label>
-            <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Contraseña" required name="password">
-          </div>
+        <!--Código postal-->
+        <div class="col-md-4">
+          <label for="inputZip" class="form-label text-white">Código postal *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Código postal" autocomplete="off" required name="code" [(ngModel)]="code"> 
+        </div>
 
-          <!--Repetir contraseña-->
-          <div class="col-md-6">
-              <label for="inputEmail4" class="form-label text-white">Repetir contraseña</label>
-              <input type="password" class="form-control bg-dark text-white" id="inputEmail4" placeholder="Repetir contraseña" required name="tpassword">
-              <span class="text-warning mt-3 centrar">Las contraseñas deben coincidir</span>
-            </div>
+        <!--Calle-->
+        <div class="col-md-4">
+          <label for="inputZip" class="form-label text-white">Calle *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Calle" autocomplete="off" required name="street" [(ngModel)]="street"> 
+        </div>
+
+        <!--Altura-->
+        <div class="col-md-4">
+          <label for="inputZip" class="form-label text-white">Altura *</label>
+          <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Altura" autocomplete="off" required name="by" [(ngModel)]="by"> 
+        </div>
+
+        <!--Razón de la solicitud-->
+        <h4 class="text-white mt-3">¿Por qué quieres una cuenta de empresa?</h4>
+        <div class="col-md-12">
+          <label for="inputZip" class="form-label text-white">Razón de la solicitud *</label>
+          <textarea class="form-control bg-dark text-white" placeholder="Razón de la solicitud" id="floatingTextarea"  name="application" [(ngModel)]="application" required=""></textarea></div>
+
 
           <!--Términos y condiciones-->
-        <div class="col-12">
+        <div class="col-md-12">
           <div class="form-check text-white">
-            <input class="form-check-input " type="checkbox" id="gridCheck">Acepto los <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-warning">términos y condiciones*</a>
+            <input class="form-check-input " type="checkbox" id="gridCheck" (change)="checkterminos()">Acepto los <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-warning">términos y condiciones *</a>
           </div>
         </div>
+        <div class="col-2"></div>
 
         <div class="col-12 centrar">
           <!--Botón volver-->
@@ -79,13 +108,15 @@
                 <button class="btn btn-secondary text-white" type="button" style="font-weight: bold" onclick="window.history.go(-1);">VOLVER</button>
               </div>
           <!--Botón aceptar-->
-              <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white " style="font-weight: bold" type="submit" [disabled]="!f.form.valid">ACEPTAR</button></div>
+              <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white " style="font-weight: bold" type="submit" [disabled]="!f.form.valid || terminos == false || checkpass == false">ACEPTAR</button></div>
         </div>
+
+        <div class="col-md-12 text-white">¿Ya tienes una cuenta de empresa? <a [routerLink]='["/iniciar-sesión"]' class="text-warning"> Inicia sesión.</a></div>
       </form>
 </div>
 
 <!--Footer-->
-<div class="col-12 fixed-bottom"><app-footer></app-footer></div>
+<app-footer></app-footer>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -417,6 +448,3 @@
   </div>
 </div>
 
-<div class="fixed-bottom">
-  <app-footer></app-footer>
-  </div>
