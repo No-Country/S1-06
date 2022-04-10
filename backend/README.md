@@ -32,3 +32,7 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+## Api Documentation
+[http://localhost:8000/redoc/](http://localhost:8000/redoc/)  
+[http://localhost:8000/swagger/](http://localhost:8000/swagger/)
