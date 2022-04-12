@@ -5,4 +5,4 @@ from .serializers import RecruiterUserSerializer
 
 class RecruiterUserViewSet(viewsets.ModelViewSet):
     serializer_class = RecruiterUserSerializer
-    queryset = get_user_model().objects.filter(is_recruiter=True)
+    queryset = get_user_model().recruiter.all()

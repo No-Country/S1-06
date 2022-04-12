@@ -23,6 +23,15 @@ class UserManager(BaseUserManager):
 
         return user
 
+class RecruiterManager(models.Manager):
+    def get_queryset(self):
+        return super(RecruiterManager, self).get_queryset()\
+            .filter(is_recruiter=True)
+
+class ApplicantManager(models.Manager):
+    def get_queryset(self):
+        return super(ApplicantManager, self).get_queryset()\
+            .filter(is_applicant=True)
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
@@ -30,6 +39,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_recruiter = models.BooleanField(default=False)
     is_applicant = models.BooleanField(default=False)
+
     objects = UserManager()
+    recruiter = RecruiterManager()
+    applicant = ApplicantManager()
 
     USERNAME_FIELD = 'email'
