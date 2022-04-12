@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompanyRegisterComponent } from './components/company-register/company-register.component';
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { FormsModule} from '@angular/forms';
     HeaderComponent,
     HomeComponent,
     NavbarComponent,
-    CompanyRegisterComponent
+    CompanyRegisterComponent,
+    DashboardUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

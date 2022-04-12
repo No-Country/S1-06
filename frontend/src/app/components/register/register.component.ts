@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'app-register',
@@ -24,11 +26,33 @@ export class RegisterComponent implements OnInit {
   //Confirmar términos
   terminos: boolean = false
 
-  constructor() { }
+  constructor(private servicioUsuario: CharacterService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  registrar(){
+    let usuario = {
+      email : this.email,
+      name: this.name,
+      surname: this.name,
+      nationality: this.nationality,
+      state: this.state,
+      code: this.code,
+      password: this.password,
+    }
+
+    if (sessionStorage.getItem('idUser') == null){
+      this.servicioUsuario.post_usuario(usuario).subscribe(
+        (response:any)=>{
+          let nameUser = response ['applicant_profile']['first_name']
+          let idUser : any = sessionStorage.getItem('idUsuario');
+
+            }
+          )
+        }
+    
+  }
 
   equalpass(){
     if(this.password===this.tpassword){
