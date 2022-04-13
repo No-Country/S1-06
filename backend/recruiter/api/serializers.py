@@ -2,15 +2,20 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from recruiter.models import RecruiterProfile
 from users.models import Location
-from users.api.serializers import LocationSerializer
 
+
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
+        fields = ('country', 'city', 'postal_code')
+        ref_name = 'RecruiterLocation'
 
 class RecruiterProfileSerializer(serializers.ModelSerializer):
     location = LocationSerializer()
 
     class Meta:
         model = RecruiterProfile
-        fields = ('first_name', 'last_name', 'phone', 'name', 'location')
+        fields = ('phone', 'name', 'location')
 
 
 class RecruiterUserSerializer(serializers.ModelSerializer):
