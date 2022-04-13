@@ -11,7 +11,7 @@ import { DesafiosComponent } from './components/desafios/desafios.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'iniciar-sesión', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'registrarse', component: RegisterComponent},
   {path: 'registrarse-empresa', component: CompanyRegisterComponent},
   {path: 'inicio-usuario', component: DashboardUserComponent},

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { RecruiterService } from '../../services/recruiter.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-company-register',
   templateUrl: './company-register.component.html',
@@ -9,7 +11,7 @@ export class CompanyRegisterComponent implements OnInit {
 
   //Datos de la empresa
   email!: string;
-  razonSocial!: string;
+  name!: string;
   phone!: string;
   description!: string;
   password!: string;
@@ -19,7 +21,7 @@ export class CompanyRegisterComponent implements OnInit {
   country!: string;
   state!: string;
   locality!: string;
-  code!: string;
+  postalCode!: string;
   street!: string;
   by!: string;
 
@@ -28,7 +30,7 @@ export class CompanyRegisterComponent implements OnInit {
   application!: string;
   terminos: boolean = false
 
-  constructor() { }
+  constructor(private service: RecruiterService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -50,4 +52,28 @@ export class CompanyRegisterComponent implements OnInit {
     console.log(this.terminos)
   }
 
+  register () {
+      const profile = {
+      name: this.name,
+      phone: this.phone,
+      location: {
+        country: this.country,
+        city: 'this.city',
+        postal_code: this.postalCode
+      }
+    }
+    let applicant = {
+      email : this.email,
+      password: this.password,
+      recruiter_profile: profile
+    }
+
+    this.service.create(applicant).subscribe(_ => {
+      Swal.fire({
+        icon: "success",
+        title: "Cuenta creada exitosamente!"
+      }).then(_ => { this.router.navigate(['/login'])})
+    })
+
+  }
 }
