@@ -9,8 +9,7 @@ class ApplicantProfile(Profilable, models.Model):
         related_name='applicant_profile',
         on_delete=models.CASCADE
     )
-    birthday = models.DateField()
-    dni = models.CharField(max_length=15)
+    birthday = models.DateField(blank=True, null=True)
     location = models.OneToOneField(
         Location,
         related_name='applicant_profile',
