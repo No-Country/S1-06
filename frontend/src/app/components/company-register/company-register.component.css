@@ -1,0 +1,24 @@
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+a {
+    text-decoration:underline
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;}
