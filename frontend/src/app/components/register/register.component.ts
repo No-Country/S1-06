@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CharacterService } from '../../services/character.service';
+import { ApplicantService } from '../../services/applicant.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -8,15 +9,16 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+
   //Datos del perfil
   email!: string;
   name!: string;
+  lastName!: string;
   surname!: string;
   description!: string;
-  nationality!: string;
-  state!: string;
-  code!: string;
+  country!: string;
+  city!: string;
+  postalCode!: string;
   password!:string;
   tpassword!:string;
 
@@ -26,32 +28,35 @@ export class RegisterComponent implements OnInit {
   //Confirmar términos
   terminos: boolean = false
 
-  constructor(private servicioUsuario: CharacterService, private router: Router) { }
+  constructor(private applicantService: ApplicantService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   registrar(){
-    let usuario = {
+
+    const profile = {
+      first_name: this.name,
+      last_name: this.lastName,
+      location: {
+        country: this.country,
+        city: this.city,
+        postal_code: this.postalCode
+      }
+    }
+    let applicant = {
       email : this.email,
-      name: this.name,
-      surname: this.name,
-      nationality: this.nationality,
-      state: this.state,
-      code: this.code,
       password: this.password,
+      applicant_profile: profile
     }
 
-    if (sessionStorage.getItem('idUser') == null){
-      this.servicioUsuario.post_usuario(usuario).subscribe(
-        (response:any)=>{
-          let nameUser = response ['applicant_profile']['first_name']
-          let idUser : any = sessionStorage.getItem('idUsuario');
+    this.applicantService.create(applicant).subscribe(res => {
+      Swal.fire({
+        icon: "success",
+        title: "Cuenta creada exitosamente!"
+      }).then(_ => { this.router.navigate(['/login'])})
+    })
 
-            }
-          )
-        }
-    
   }
 
   equalpass(){
