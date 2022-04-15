@@ -22,3 +22,11 @@ a:hover {
 
 a:active {
     text-decoration: underline;}
+
+#nombre{
+text-decoration: none;
+}
+
+.titulo{
+    font-family: 'Maven Pro', sans-serif;
+}

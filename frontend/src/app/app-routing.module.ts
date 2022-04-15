@@ -8,6 +8,8 @@ import { DashboardUserComponent } from './components/dashboard-user/dashboard-us
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { EmpresasComponent } from './components/empresas/empresas.component';
 import { DesafiosComponent } from './components/desafios/desafios.component';
+import { DashboardEmpresaComponent } from './components/dashboard-empresa/dashboard-empresa.component';
+import { PerfilesComponent } from './components/perfiles/perfiles.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'inicio-usuario', component: DashboardUserComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'empresas', component: EmpresasComponent},
-  {path: 'desafíos', component: DesafiosComponent}
+  {path: 'desafíos', component: DesafiosComponent},
+  {path: 'inicio-empresa', component: DashboardEmpresaComponent},
+  {path: 'perfiles', component: PerfilesComponent}
 ];
 
 @NgModule({

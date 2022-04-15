@@ -7,22 +7,25 @@
 <div class="row mx-2">
     <div class="col-sm-6 mb-3">
         <div class="card text-dark bg-light border-warning">
-        <div class="card-header border-warning text-center fw-bold">PON A PRUEBA TUS CONOCIMIENTOS</div>
+        <div class="card-header border-warning text-center fw-bold">¿BUSCÁS PROGRAMADORES?</div>
           <div class="card-body border-warning">
-            <p class="card-text">Si quieres medir tus conocimientos técnicos en las distintas tecnologías del mundo de la programación, realiza una serie de desafíos que pondrán a prueba tu nivel.
-            <p class="card-text">Al finalizar cada desafío obtendrás una calificación que te servirá para tener una noción de tu destreza con la tecnología evaluada.</p>
-            <span class="d-flex text-align-center justify-content-center pt-1"><a [routerLink]="['/desafíos']"><button class="btn btn-outline-warning fw-bold ">DESAFÍOS</button></a></span>
+            <p class="card-text">Si eres una empresa y estás en busqueda de programadores de calidad, puedes ver los distintos perfiles de los usuarios que utilizan la aplicación y conocer sus resultados en las pruebas de habilidad.</p>
+            <p class="card-text">Por otro lado, si buscás un tipo determinado de programador, tienes la posibilidad de crear tu propio desafío personalizado, y monitorear los usuarios que lo realizan.</p>
+            <span class="d-flex text-align-center justify-content-center pt-2 mb-3"><i class="fa-solid fa-file-code fa-3x"></i> </span>         
+            <span class="d-flex text-align-center justify-content-center pt-2"><a [routerLink]="['/desafíos']"><button class="btn btn-outline-warning fw-bold ">CREAR DESAFÍO</button></a>
+                <a [routerLink]="['/perfiles']"><button class="btn btn-outline-warning fw-bold mx-2">PERFILES</button></a></span>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6 mb-5">
         <div class="card text-dark bg-light border-warning">
-        <div class="card-header border-warning text-center fw-bold">BENEFICIOS PARA LOS JUGADORES</div>
+        <div class="card-header border-warning text-center fw-bold">FUNCIONAMIENTO DE LA APLICACIÓN</div>
           <div class="card-body border-warning">
-            <p class="card-text ">Cada puntaje obtenido de los desafíos realizados por el jugador se reflejará con un rango en el perfil de este que indicará su nivel de maestría con determinada tecnología. Estos logros serán visibles a las empresas y abren las puertas a posibles ofertas laborales.</p>
-            <p class="card-text">Si quieres saber más sobre el modo de funcionar de la aplicación, pulsa en el botón de abajo.</p>
-            <span class="d-flex text-align-center justify-content-center"><a><button class="btn btn-outline-dark fw-bold " data-bs-toggle="modal" data-bs-target="#exampleModal">+ INFORMACIÓN</button></a></span>
+            <p class="card-text ">Cada desafío publicado está caracterizado por un nivel de destreza, y por una tecnología específica. Una vez que un desafío es resuelto, el usuario va a obtener una calificación de acuerdo a sus respuestas.</p>
+            <p class="card-text">Los usuarios van a ser evaluados en base a sus desafíos realizados y van a obtener un rango. Este será de utilidad para que las empresas puedan saber su nivel de habilidad.</p>
+            <p class="card-text">Si quieres saber más sobre el funcionamiento de los rangos y la visibilidad del perfil, pulsa en el botón de abajo.</p>
+            <span class="d-flex text-align-center justify-content-center pt-3"><a><button class="btn btn-outline-dark fw-bold " data-bs-toggle="modal" data-bs-target="#exampleModal">+ INFORMACIÓN</button></a></span>
           </div>
         </div>
       </div>
@@ -81,6 +84,5 @@
   </div>
 
   <a id="nombre" [routerLink]="['/contacto']"><h1 class="text-light centrar fw-bold display-1 titulo mb-5">Code&Co</h1></a>
-
 
 <app-footer class="fixed-bottom"></app-footer>
