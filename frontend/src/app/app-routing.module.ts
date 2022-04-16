@@ -10,6 +10,8 @@ import { EmpresasComponent } from './components/empresas/empresas.component';
 import { DesafiosComponent } from './components/desafios/desafios.component';
 import { DashboardEmpresaComponent } from './components/dashboard-empresa/dashboard-empresa.component';
 import { PerfilesComponent } from './components/perfiles/perfiles.component';
+import { DpythonComponent } from './components/dpython/dpython.component';
+import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'empresas', component: EmpresasComponent},
   {path: 'desafíos', component: DesafiosComponent},
   {path: 'inicio-empresa', component: DashboardEmpresaComponent},
-  {path: 'perfiles', component: PerfilesComponent}
+  {path: 'perfiles', component: PerfilesComponent},
+  {path: 'desafíos-python', component: DpythonComponent},
+  {path: 'crear-desafío', component: CrearDesafioComponent}
 ];
 
 @NgModule({

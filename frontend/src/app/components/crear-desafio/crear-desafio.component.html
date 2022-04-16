@@ -1,0 +1,177 @@
+<br><br> 
+
+<app-navbar></app-navbar>
+
+<div class="container-fluid " id="bloque">
+    <div class="card m-4" *ngIf="inicio">
+        <h3 class="card-header text-center fw-bold">CREACIÓN DEL DESAFÍO</h3>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="f.form.valid" class="row g-3 rounded">
+                
+                <!--Título del desafío-->
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Título del desafío:</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Título"
+                      autocomplete="off" name="titulo" [(ngModel)]="titulo" required>
+                </div>
+
+                <!--Descripción del desafío-->
+                <div class="col-md-6">
+                    <label for="inputAddress2" class="form-label fw-bold">Descripción del desafío:</label>
+                    <textarea class="form-control" placeholder="Agrega una breve descripción" id="floatingTextarea"
+                      name="descripcion" [(ngModel)]="descripcion" required></textarea>
+                  </div>
+
+                <!--Lenguaje de programación-->
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label fw-bold">Lenguaje de programación:</label>
+                    <select id="inputState" class="form-select" name="lenguaje" [(ngModel)]="lenguaje" required>
+                        <option>Python</option>
+                    </select>
+                    
+                </div>
+
+                <!--Nivel de dificultad del desafío-->
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Nivel:</label>
+                    <select id="inputState" class="form-select" name="nivel" [(ngModel)]="nivel" required>
+                        <option>Junior</option>
+                        <option>Semisenior</option>
+                        <option>Senior</option>
+                    </select>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="card-footer mt-4">
+            <div class="col-12 centrar">
+                <!--Botón volver-->
+                <div class="d-grid gap-2 col-3 mx-3">
+                  <button class="btn btn-dark text-white fw-bold" type="button" 
+                    onclick="window.history.go(-1);">VOLVER</button>
+                </div>
+                <!--Botón aceptar-->
+                <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white fw-bold" 
+                    type="submit" [disabled]="!f.form.valid" (click)="mostrar()">ACEPTAR</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class="card m-4" *ngIf="estructura">
+        <h3 class="card-header text-warning text-center fw-bold">PREGUNTAS Y RESPUESTAS DEL DESAFÍO</h3>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="f.form.valid" class="row g-3 rounded">
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Pregunta 1:</label>
+                    <textarea class="form-control" placeholder="Escriba la pregunta" id="floatingTextarea"
+                         name="pregunta1" [(ngModel)]="opcion1" required></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones de respuesta:</label>
+                    <input type="text" class="form-control border-success fw-bold" id="inputAddress" placeholder="Opción correcta"
+                        autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Pregunta 2:</label>
+                    <textarea class="form-control" placeholder="Escriba la pregunta" id="floatingTextarea"
+                         name="pregunta1" required></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones de respuesta:</label>
+                    <input type="text" class="form-control border-success fw-bold" id="inputAddress" placeholder="Opción correcta"
+                        autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Pregunta 3:</label>
+                    <textarea class="form-control" placeholder="Escriba la pregunta" id="floatingTextarea"
+                         name="pregunta1" required></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones de respuesta:</label>
+                    <input type="text" class="form-control border-success fw-bold" id="inputAddress" placeholder="Opción correcta"
+                        autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Pregunta 4:</label>
+                    <textarea class="form-control" placeholder="Escriba la pregunta" id="floatingTextarea"
+                         name="pregunta1" required></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones de respuesta:</label>
+                    <input type="text" class="form-control border-success fw-bold" id="inputAddress" placeholder="Opción correcta"
+                        autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Pregunta 5:</label>
+                    <textarea class="form-control" placeholder="Escriba la pregunta" id="floatingTextarea"
+                         name="pregunta1" required></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones de respuesta:</label>
+                    <input type="text" class="form-control border-success fw-bold" id="inputAddress" placeholder="Opción correcta"
+                        autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                    <input type="text" class="form-control mt-3" id="inputAddress" placeholder="Opción falsa"
+                    autocomplete="off" required name="option1">
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="card-footer mt-3">
+            <div class="col-12 centrar mt-3">
+                <!--Botón volver-->
+                <div class="d-grid gap-2 col-3 mx-3">
+                  <button class="btn btn-dark text-white fw-bold" type="button" 
+                    (click)="inverso()">VOLVER</button>
+                </div>
+                <!--Botón aceptar-->
+                <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white fw-bold" 
+                    type="submit" [disabled]="!f.form.valid">ACEPTAR</button>
+                </div>
+            </div>
+</div>
+
+

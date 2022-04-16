@@ -18,6 +18,8 @@ import { EmpresasComponent } from './components/empresas/empresas.component';
 import { DesafiosComponent } from './components/desafios/desafios.component';
 import { DashboardEmpresaComponent } from './components/dashboard-empresa/dashboard-empresa.component';
 import { PerfilesComponent } from './components/perfiles/perfiles.component';
+import { DpythonComponent } from './components/dpython/dpython.component';
+import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { PerfilesComponent } from './components/perfiles/perfiles.component';
     DesafiosComponent,
     DashboardEmpresaComponent,
     PerfilesComponent,
+    DpythonComponent,
+    CrearDesafioComponent,
   ],
   imports: [
     BrowserModule,
