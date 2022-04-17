@@ -12,4 +12,7 @@ export class DpythonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  jugar(){
+    
+  }
 }

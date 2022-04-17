@@ -48,24 +48,22 @@
 
 <div class="offcanvas offcanvas-end bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header text-white">
-    <div class = "container-fluid centrar">
-      <h5 class="offcanvas-title " id="offcanvasWithBothOptionsLabel">USUARIO</h5>
+    <div class = "container-fluid text-center">
+      <h3 class="offcanvas-title fw-bold text-warning" id="offcanvasWithBothOptionsLabel">USUARIO</h3>
     </div>
     <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
 
     <ul class="container-fluid list-group" aria-labelledby="botonLogin">
-      <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mi-perfil']" class="link text-warning"
-          data-bs-dismiss="offcanvas"><b>Mi perfil</b></a></li>
-      <li class="container-fluid list-group-item centrar"><a [routerLink]="['']" class="link text-warning"
-          data-bs-dismiss="offcanvas"><b>Cerrar sesión</b></a></li>
+      <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mi-perfil']" class="link text-dark fw-bold"
+          data-bs-dismiss="offcanvas">Mi perfil</a></li>
+      <li class="container-fluid list-group-item centrar"><a (click)="cerrarsesion()" class="link text-dark fw-bold"
+          data-bs-dismiss="offcanvas">Cerrar sesión</a></li>
     </ul>
 
   </div>
 </div>
-
--->
 
 <br><br><br>
 

@@ -54,6 +54,13 @@ export class CrearDesafioComponent implements OnInit {
   opcion19!: string
   opcion20!: string
 
+  //Opciones correctas
+  rta1!: string
+  rta2!: string
+  rta3!: string
+  rta4!: string
+  rta5!: string
+
 
   constructor() { }
 

@@ -20,6 +20,7 @@ import { DashboardEmpresaComponent } from './components/dashboard-empresa/dashbo
 import { PerfilesComponent } from './components/perfiles/perfiles.component';
 import { DpythonComponent } from './components/dpython/dpython.component';
 import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
+import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.
     PerfilesComponent,
     DpythonComponent,
     CrearDesafioComponent,
+    MiPerfilComponent,
   ],
   imports: [
     BrowserModule,
