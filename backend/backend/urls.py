@@ -46,4 +46,5 @@ urlpatterns = [
     path('api/', include('users.urls')),
     path('api/', include('recruiter.urls')),
     path('api/', include('applicant.urls')),
+    path('api/', include('challenge.urls')),
 ]
