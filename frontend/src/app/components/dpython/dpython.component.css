@@ -1,0 +1,10 @@
+.titulo{
+    font-size: 10vh;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

@@ -13,6 +13,14 @@ import { CompanyRegisterComponent } from './components/company-register/company-
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { EmpresasComponent } from './components/empresas/empresas.component';
+import { DesafiosComponent } from './components/desafios/desafios.component';
+import { DashboardEmpresaComponent } from './components/dashboard-empresa/dashboard-empresa.component';
+import { PerfilesComponent } from './components/perfiles/perfiles.component';
+import { DpythonComponent } from './components/dpython/dpython.component';
+import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
+import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +33,14 @@ import { DashboardUserComponent } from './components/dashboard-user/dashboard-us
     NavbarComponent,
     CompanyRegisterComponent,
     DashboardUserComponent,
+    ContactoComponent,
+    EmpresasComponent,
+    DesafiosComponent,
+    DashboardEmpresaComponent,
+    PerfilesComponent,
+    DpythonComponent,
+    CrearDesafioComponent,
+    MiPerfilComponent,
   ],
   imports: [
     BrowserModule,

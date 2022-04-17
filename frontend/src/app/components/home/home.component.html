@@ -1,13 +1,13 @@
 <div class="container-fluid pt-2">
   <div class="container-fluid mt-5 d-flex justify-content-end">
     <form class="form-inline">
-      <a [routerLink]="['/login']"><button class="btn btn-outline-light" type="button">Iniciar Sesión</button></a>
+      <a [routerLink]="['/login']"><button class="btn btn-outline-light fw-bold" type="button">Iniciar Sesión</button></a>
       <button class="btn btn btn-warning mx-2" type="button" data-bs-toggle="modal"
         data-bs-target="#exampleModal"><b>Registrarse</b></button>
     </form>
   </div>
   <div class="container-fluid centrar mt-3 mb-4">
-    <h1 class="mx-5" style="color: white">Code&CO</h1>
+    <h1 class="mx-5 display-1 text-light fw-bold">Code&CO</h1>
   </div>
   <div class="container d-flex justify-content-center mb-5">
     <div class="col card mx-2">
@@ -19,7 +19,7 @@
           candidatos.</p>
         <span class="centrar">
           <a [routerLink]="['/registrarse-empresa']">
-            <button type="button" class="btn btn-dark ">EMPIEZA A CONTRATAR</button>
+            <button type="button" class="btn btn-dark fw-bold">EMPIEZA A CONTRATAR</button>
           </a>
         </span>
       </div>
@@ -33,7 +33,7 @@
           una cuenta para realizar desafíos.</p>
         <div class="container d-flex justify-content-center">
           <a [routerLink]="['/registrarse']">
-            <button type="button" class="btn btn-outline-warning mt-4"><b>CREAR CUENTA</b></button>
+            <button type="button" class="btn btn-outline-warning mt-4 fw-bold">CREAR CUENTA</button>
           </a>
         </div>
 
@@ -90,7 +90,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="container d-flex justify-content-center">
-          <h5 class="modal-title " id="exampleModalLabel">REGÍSTRATE</h5>
+          <h5 class="modal-title fw-bold" id="exampleModalLabel">REGÍSTRATE</h5>
         </span>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -100,7 +100,7 @@
             aria-label="Close"><b>PROGRAMADOR</b></button></span>
 
         <span class="container d-grid gap-2 col-6 mx-auto mt-2" [routerLink]="['/registrarse-empresa']"><button
-            type="button" class="btn btn-dark" data-bs-dismiss="modal" aria-label="Close">EMPRESA</button>
+            type="button" class="btn btn-dark fw-bold" data-bs-dismiss="modal" aria-label="Close">EMPRESA</button>
         </span>
       </div>
     </div>
@@ -108,6 +108,8 @@
 </div>
 
 <span [routerLink]="['inicio-usuario']"><button class="primary">Dashboard user</button></span>
+<span [routerLink]="['inicio-empresa']"><button class="primary">Dashboard empresa</button></span>
+
 
 <app-footer></app-footer>
 
