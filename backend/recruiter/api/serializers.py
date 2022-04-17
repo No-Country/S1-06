@@ -10,6 +10,7 @@ class LocationSerializer(serializers.ModelSerializer):
         fields = ('country', 'city', 'postal_code')
         ref_name = 'RecruiterLocation'
 
+
 class RecruiterProfileSerializer(serializers.ModelSerializer):
     location = LocationSerializer()
 

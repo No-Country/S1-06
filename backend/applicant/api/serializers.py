@@ -3,11 +3,13 @@ from django.contrib.auth import get_user_model
 from applicant.models import ApplicantProfile
 from users.models import Location
 
+
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
         fields = ('country', 'city', 'postal_code')
         ref_name = 'ApplicantLocation'
+
 
 class ApplicantProfileSerializer(serializers.ModelSerializer):
     location = LocationSerializer()
