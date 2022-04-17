@@ -1,14 +1,21 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from users.models import Location 
 from applicant.api.serializers import ApplicantProfileSerializer
 from recruiter.api.serializers import RecruiterProfileSerializer
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ('id', 'email', 'is_superuser', 'is_applicant', 'is_recruiter')
+        fields = (
+            'id',
+            'email',
+            'is_superuser',
+            'is_applicant',
+            'is_recruiter'
+        )
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
@@ -23,5 +30,5 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             profile = RecruiterProfileSerializer(
                 instance=self.user.applicant_profile
             ).data
-        data.update({ 'profile': profile })
+        data.update({'profile': profile})
         return data
