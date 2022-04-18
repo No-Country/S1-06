@@ -1,10 +1,11 @@
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import mixins
 from drf_yasg.utils import swagger_auto_schema
 
-from challenge.models import Challenge
-from challenge.api.serializers import ChallengeSerializer, QuestionSerializer
+from challenge.models import Category, Challenge
+from challenge.api.serializers import ChallengeSerializer, QuestionSerializer, CategorySerializer
 from challenge.permissions import isRecruiterOrAdmin
 
 
@@ -33,3 +34,12 @@ class ChallengeViewsets(viewsets.ModelViewSet):
         questions = challenge.questions.all()
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class CategoryAPIView(
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet):
+
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer

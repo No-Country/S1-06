@@ -2,12 +2,13 @@ from django.urls import path
 
 from rest_framework.routers import DefaultRouter
 
-from challenge.api.views import ChallengeViewsets
+from challenge.api.views import ChallengeViewsets, CategoryAPIView
 
 app_name = 'challenge'
 
 router = DefaultRouter()
 router.register(r'challenges', ChallengeViewsets, basename='challenge')
+router.register(r'categories', CategoryAPIView, basename='category')
 urlpatterns = router.urls
 
 urlpatterns += [
