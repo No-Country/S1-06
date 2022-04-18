@@ -27,6 +27,25 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('profile', JSON.stringify(profile));
     return payload;
-    }
+  }
 
+  public logout (): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('profile');
+  }
+
+  public getTypeUser (): any{
+    let user: any = localStorage.getItem('user')
+    if (user) {
+      user = JSON.parse(user)
+      if (user.is_superuser) {
+        return 'admin'
+      }
+      if (user.is_recruiter) {
+        return 'recruiter'
+      }
+      return 'applicant'
+    }
+  }
 }
