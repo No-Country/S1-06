@@ -28,7 +28,8 @@ def sample_challenge(**params):
         "title": "sample challenge",
         "level": "Junior",
         "description": 'this description',
-        "category_id": 1
+        "category_id": 1,
+        "created_by_id": 1
     }
 
     defaults.update(params)

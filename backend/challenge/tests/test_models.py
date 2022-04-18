@@ -1,17 +1,21 @@
 from django.test import TestCase
+from django.contrib.auth import get_user_model
 from challenge.models import Challenge, Question, Category
 
 
 def sample_category():
     return Category.objects.create(name="python")
 
+def sample_user():
+    return get_user_model().objects.create(email='test@gmail.com', password='123456')
 
 def sample_challenge(**params):
     defaults = {
         "title": "sample challenge",
         "level": "Junior",
         "description": 'this description',
-        "category_id": 1
+        "category_id": 1,
+        "created_by_id": 1,
     }
     defaults.update(params)
     return Challenge.objects.create(**defaults)
@@ -20,6 +24,7 @@ def sample_challenge(**params):
 class ChallengeModelTest(TestCase):
     def test_add_questions(self):
         sample_category()
+        sample_user()
         challenge = sample_challenge()
         payload = [
             {
@@ -53,6 +58,7 @@ class ChallengeModelTest(TestCase):
 class QuestionModelTest(TestCase):
     def test_add_options(self):
         sample_category()
+        sample_user()
         challenge = sample_challenge()
         questions = Question.objects.create(
             title="question1",
