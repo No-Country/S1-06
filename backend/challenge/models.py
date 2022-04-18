@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
@@ -18,6 +19,7 @@ class Challenge(models.Model):
     description = models.TextField(_('description'))
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     level = models.CharField(max_length=255, choices=LEVELS)
+    created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def add_questions(self, questions):
         for question in questions:
@@ -47,3 +49,43 @@ class Option(models.Model):
         on_delete=models.CASCADE
     )
     is_correct = models.BooleanField(default=False)
+
+
+# class Answer(models.Model):
+#     question = models.ForeignKey(
+#         Question,
+#         on_delete=models.CASCADE,
+#         related_name="answers"
+#     )
+
+#     choice = models.ForeignKey(
+#         Option,
+#         on_delete=models.CASCADE,
+#         related_name="answers"
+#     )
+
+# class ChallengeComplete(models.Model):
+#     applicant = models.ForeignKey(
+#         get_user_model(),
+#         on_delete=models.CASCADE,
+#         related_name="challenge_complete"
+#     )
+#     challenge = models.ForeignKey(
+#         Challenge,
+#         on_delete=models.CASCADE,
+#         related_name="challenge_complete"
+#     )
+#     answers = models.ForeignKey(
+#         Answer,
+#         on_delete=models.CASCADE,
+#         related_name="challenge_complete"
+#     ),
+
+#     @property
+#     def get_score(self):
+#         answers = self.answers.select_related('choice').all()
+#         count = 0
+#         for answer in answers:
+#             if (answer.choice.is_correct == True):
+#                 count = count + 1
+#         return f"{count}/{len(answers)}"
