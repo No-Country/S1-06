@@ -16,6 +16,14 @@ export function handleError (error: any) {
           html: html,
         })
       }
+      if (error.status === 403) {
+        errorMessage = error.detail
+        Swal.fire({
+          title: 'Error',
+          icon: 'error',
+          text: errorMessage,
+        })
+      }
       else {
          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
           Swal.fire({
