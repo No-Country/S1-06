@@ -11,7 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompanyRegisterComponent } from './components/company-register/company-register.component';
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { EmpresasComponent } from './components/empresas/empresas.component';
@@ -21,6 +21,7 @@ import { PerfilesComponent } from './components/perfiles/perfiles.component';
 import { DpythonComponent } from './components/dpython/dpython.component';
 import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
+import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,12 @@ import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+	  provide: HTTP_INTERCEPTORS,
+	  useClass: TokenInterceptorService,
+	  multi: true,
+	},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
