@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment'
+import { ChallengeService } from '../../services/challenge.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-desafio',
@@ -6,71 +11,91 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-desafio.component.css']
 })
 export class CrearDesafioComponent implements OnInit {
-  
+
   //Inicio formulario
   titulo!: string
   descripcion!: string
   lenguaje!: string
   nivel!: string
-
+  categories!:Array<any>
   //Validación
   inicio: boolean = true
   estructura: boolean = false
 
-  //Fin del formulario
-  pregunta1!: string
-  pregunta2!: string
-  pregunta3!: string
-  pregunta4!: string
-  pregunta5!: string
-  
-  //Pregunta 1
-  opcion1!: string
-  opcion2!: string
-  opcion3!: string
-  opcion4!: string
+  challenge = {
+    id: -1
+  }
+  questions = [
+    {
+        number: "1",
+        title: "",
+        options: [
+          { text: ""},
+          { text: ""},
+          { text: ""},
+          { text: ""},
+        ],
+        select: "",
+      },
+    {
+        number: "2",
+        title: "",
+        options: [
+          { text: ""},
+          { text: ""},
+          { text: ""},
+          { text: ""},
+        ],
+        select: "",
+      },
+    {
+        number: "3",
+        title: "",
+        options: [
+          { text: ""},
+          { text: ""},
+          { text: ""},
+          { text: ""},
+        ],
+        select: "",
+      },
+    {
+        number: "4",
+        title: "",
+        options: [
+          { text: ""},
+          { text: ""},
+          { text: ""},
+          { text: ""},
+        ],
+        select: "",
+      },
+    {
+        number: "5",
+        title: "",
+        options: [
+          { text: ""},
+          { text: ""},
+          { text: ""},
+          { text: ""},
+        ],
+        select: "",
+      },
+    ]
 
-  //Pregunta 2
-  opcion5!: string
-  opcion6!: string
-  opcion7!: string
-  opcion8!: string
 
-  //Pregunta 3
-  opcion9!: string
-  opcion10!: string
-  opcion11!: string
-  opcion12!: string
+  constructor(private http: HttpClient, private challengeService: ChallengeService, private router: Router) { }
 
-  //Pregunta 4
-  opcion13!: string
-  opcion14!: string
-  opcion15!: string
-  opcion16!: string
-
-  //Pregunta 5
-  opcion17!: string
-  opcion18!: string
-  opcion19!: string
-  opcion20!: string
-
-  //Opciones correctas
-  rta1!: string
-  rta2!: string
-  rta3!: string
-  rta4!: string
-  rta5!: string
-
-
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.getCategories().subscribe(result => {
+      this.categories = result
+   })
   }
 
   mostrar(){
     this.estructura = true
     this.inicio = false
-
+    console.log(this.questions)
     let bloque = document.getElementById('bloque')
 
   }
@@ -78,5 +103,59 @@ export class CrearDesafioComponent implements OnInit {
   inverso(){
     this.estructura = false
     this.inicio = true
+  }
+  getCategories () {
+    return this.http.get<any>(`${environment.api_url}categories/`);
+  }
+
+  getQuestionsForm () {
+    return this.questions.map((question) => {
+      let options = question.options.map((option, i) => {
+        let is_correct = (Number(question.select) == i) ? true : false
+        return {
+          text: option.text,
+          is_correct
+        }
+      })
+      return {
+        challenge: this.challenge.id,
+        title: question.title,
+        options,
+      }
+    })
+  }
+
+
+  create () {
+    const challenge = {
+      title: this.titulo,
+      description: this.descripcion,
+      category: this.lenguaje,
+      level: this.nivel
+    }
+      Swal.fire({
+        title: 'Creando...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading()
+        },
+      })
+
+
+    this.challengeService.create(challenge).subscribe(result => {
+      this.challenge = result
+      const questions = this.getQuestionsForm()
+      this.challengeService.addQuestions(questions, this.challenge.id).subscribe(res => {
+        console.log(res)
+        Swal.fire({
+          icon: 'success',
+          title: 'Creado exitosamente!',
+          showConfirmButton: true,
+        }).then(_ => {
+          this.router.navigate(['/desafíos'])
+      })
+      })
+    })
   }
 }
