@@ -27,6 +27,12 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+## Load data
+
+```bash
+python manage.py loaddata challenge/fixtures/categories.json
+```
+
 ## Run server
 
 ```bash
@@ -34,5 +40,6 @@ python manage.py runserver
 ```
 
 ## Api Documentation
+
 [http://localhost:8000/redoc/](http://localhost:8000/redoc/)  
 [http://localhost:8000/swagger/](http://localhost:8000/swagger/)
