@@ -1,6 +1,10 @@
+from django.contrib.auth import get_user_model
+
 from rest_framework import serializers
 
 from challenge.models import Category, Question, Option, Challenge
+from users.api.serializers import UserSerializer
+from recruiter.api.serializers import RecruiterProfileSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -39,7 +43,6 @@ class ChallengeSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all()
     )
-
     class Meta:
         model = Challenge
         fields = (
@@ -48,8 +51,28 @@ class ChallengeSerializer(serializers.ModelSerializer):
             'description',
             'category',
             'level',
-            'questions'
+            'questions',
+            'created_by'
         )
         extra_kwargs = {
-            'category': {'write_only': True}, 'id': {'read_only': True}
+            'category': {'write_only': True},
+            'id': {'read_only': True},
+            "created_by": {'read_only': True}
         }
+
+    def create(self, validated_data):
+        validated_data['created_by'] = self.context['request'].user
+        challenge = Challenge.objects.create(**validated_data)
+        return challenge
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        user = get_user_model().objects.get(pk=data['created_by'])
+        data['created_by'] = {'user': UserSerializer(instance=user).data, "profile": {}}
+        profile = {}
+        if (user.is_recruiter):
+            profile = RecruiterProfileSerializer(
+                instance=user.recruiter_profile
+            ).data
+            data['created_by']['profile'] = profile
+        return data
