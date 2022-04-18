@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       return '/inicio-admin'
     }
     if (user.is_recruiter) {
-      return '/inicio-company'
+      return '/inicio-empresa'
     }
     return '/inicio-usuario'
   }
