@@ -1,3 +1,4 @@
+import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesafiosComponent implements OnInit {
 
-  constructor() { }
+  isNotApplicant:boolean = false
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.isNotApplicant = ['admin', 'recruiter'].includes(this.authService.getTypeUser())
   }
 
 }
