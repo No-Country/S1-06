@@ -28,7 +28,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             ).data
         elif (self.user.is_recruiter):
             profile = RecruiterProfileSerializer(
-                instance=self.user.applicant_profile
+                instance=self.user.recruiter_profile
             ).data
         data.update({'profile': profile})
         return data
