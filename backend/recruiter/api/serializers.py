@@ -44,7 +44,7 @@ class RecruiterUserSerializer(serializers.ModelSerializer):
         profile_data = validated_data.pop('recruiter_profile')
         location = Location.objects.create(**location_data)
         user = get_user_model().objects.create_user(
-            is_active=False,
+            is_active=True,
             is_recruiter=True,
             **validated_data
         )
