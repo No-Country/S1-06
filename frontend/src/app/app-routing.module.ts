@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'inicio-empresa', component: DashboardEmpresaComponent},
   {path: 'perfiles', component: PerfilesComponent},
   {path: 'desafíos-python', component: DpythonComponent},
-  {path: 'crear-desafío', component: CrearDesafioComponent},
+  {path: 'crear-desafio', component: CrearDesafioComponent},
   {path: 'mi-perfil', component: MiPerfilComponent}
 ];
 
