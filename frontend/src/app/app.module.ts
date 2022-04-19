@@ -21,6 +21,8 @@ import { PerfilesComponent } from './components/perfiles/perfiles.component';
 import { DpythonComponent } from './components/dpython/dpython.component';
 import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
+import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
+import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
     DpythonComponent,
     CrearDesafioComponent,
     MiPerfilComponent,
+    InicioDesafioComponent,
+    JugarDesafioComponent,
   ],
   imports: [
     BrowserModule,

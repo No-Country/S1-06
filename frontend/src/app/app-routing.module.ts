@@ -13,6 +13,8 @@ import { PerfilesComponent } from './components/perfiles/perfiles.component';
 import { DpythonComponent } from './components/dpython/dpython.component';
 import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
+import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
+import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path: 'perfiles', component: PerfilesComponent},
   {path: 'desafíos-python', component: DpythonComponent},
   {path: 'crear-desafío', component: CrearDesafioComponent},
-  {path: 'mi-perfil', component: MiPerfilComponent}
+  {path: 'mi-perfil', component: MiPerfilComponent},
+  {path: 'inicio-desafío', component: InicioDesafioComponent},
+  {path: 'jugar-desafío', component: JugarDesafioComponent}
 ];
 
 @NgModule({
