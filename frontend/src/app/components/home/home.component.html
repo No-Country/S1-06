@@ -9,37 +9,42 @@
   <div class="container-fluid centrar mt-3 mb-4">
     <h1 class="mx-5 display-1 text-light fw-bold">Code&CO</h1>
   </div>
-  <div class="container d-flex justify-content-center mb-5">
-    <div class="col card mx-2">
-
-      <div class="card-body">
-        <h5 class="card-title">PARA EMPRESAS</h5>
-        <p class="card-text">Si eres una empresa y estás buscando talento IT puedes abrirte una cuenta para conocer los
-          perfiles de los usuarios. Contarás con la posibilidad de crear tus desafíos personalizados para probar a los
-          candidatos.</p>
-        <span class="centrar">
-          <a [routerLink]="['/registrarse-empresa']">
-            <button type="button" class="btn btn-dark fw-bold">EMPIEZA A CONTRATAR</button>
-          </a>
-        </span>
+  <div class="row mb-3 mx-2">
+    <div class="col-sm-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold">PARA EMPRESAS</h5>
+          <p class="card-text">Si eres una empresa y estás buscando talento IT puedes abrirte una cuenta para conocer los
+            perfiles de los usuarios. Contarás con la posibilidad de crear tus desafíos personalizados para probar a los
+            candidatos.</p>
+          <span class="centrar">
+            <a [routerLink]="['/registrarse-empresa']">
+              <button type="button" class="btn btn-dark fw-bold">EMPIEZA A CONTRATAR</button>
+            </a>
+          </span>
+        </div>
       </div>
+      
     </div>
 
-    <div class="col card">
-
-      <div class="card-body">
-        <h5 class="card-title">PARA PROGRAMADORES</h5>
-        <p class="card-text">Si eres un programador y quieres poner a prueba tus conocimientos técnicos puedes crearte
-          una cuenta para realizar desafíos.</p>
-        <div class="container d-flex justify-content-center">
-          <a [routerLink]="['/registrarse']">
-            <button type="button" class="btn btn-outline-warning mt-4 fw-bold">CREAR CUENTA</button>
-          </a>
+    <div class="col-sm-6 mb-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold">PARA PROGRAMADORES</h5>
+          <p class="card-text">Si eres un programador y quieres poner a prueba tus conocimientos técnicos puedes crearte
+            una cuenta para realizar desafíos.</p>
+          <div class="container d-flex justify-content-center">
+            <a [routerLink]="['/registrarse']">
+              <button type="button" class="btn btn-outline-warning mt-4 fw-bold">CREAR CUENTA</button>
+            </a>
+          </div>
+  
         </div>
-
       </div>
+      
     </div>
   </div>
+
   <div class="container-fluid centrar">
     <div id="carouselExampleDark" class="carousel carousel-dark slide bg-white img-fluid mb-5" style="width: 50%">
       <div class="carousel-indicators">
