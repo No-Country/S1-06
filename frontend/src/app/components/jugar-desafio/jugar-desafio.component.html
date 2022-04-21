@@ -1,138 +1,27 @@
-<div class="card m-4" >
-    <div class="card-header text-warning text-center">
-        <div class="container-fluid">
-            <span class="container d-flex justify-content-center"><h3 class="fw-bold mt-2">(NOMBRE DEL DESAFÍO)</h3></span>
-            <button type="button" class=" btn btn-dark"></button>
-        </div>
+<div class="card m-4">
+  <div class="card-header text-warning text-center">
+    <div class="container-fluid">
+      <span class="container d-flex justify-content-center">
+        <h3 class="fw-bold mt-2">{{title}}</h3>
+      </span>
+      <button type="button" class=" btn btn-dark"></button>
+    </div>
+
+  </div>
+  <div class="card-body">
+    <form #f="ngForm" (ngSubmit)="f.form.valid " class="row g-3 rounded">
+      <app-question [data]="question" [index]="indexOfelement"
+        *ngFor="let question of challenge.questions;let indexOfelement=index;">
+      </app-question>
+    </form>
+
+    <div class="card-footer mt-3">
+
+      <span class="d-flex justify-content-center mt-3"><button (click)="complete()" type="submit"
+          class="btn btn-warning fw-bold text-white" [disabled]="disabledButton">FINALIZAR</button>
+      </span>
 
     </div>
-    <div class="card-body">
-        <form #f="ngForm" (ngSubmit)="f.form.valid" class="row g-3 rounded">
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">(Pregunta 1)</label>
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 1</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 2</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 3</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 4</label>
-                </div>
-                  
-
-            </div>
-
-            <hr>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">(Pregunta 2)</label>
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 1</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 2</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 3</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 4</label>
-                </div>
-                  
-            </div>
-
-            <hr>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">(Pregunta 3)</label>
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 1</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 2</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 3</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 4</label>
-                </div>
-                  
-            </div>
-
-            <hr>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">(Pregunta 4)</label>
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 1</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 2</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 3</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 4</label>
-                </div>   
-
-            </div>
-
-            <hr>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">(Pregunta 5)</label>
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 1</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 2</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 3</label>
-                </div>
-                <div class="radio mb-1">
-                    <label><input type="radio" name="optradio">  Option 4</label>
-                </div>
-                  
-
-            </div>
 
 
-        </form>
-
-        <div class="card-footer mt-3">
-
-            <span class="d-flex justify-content-center mt-3"><button type="submit" class="btn btn-warning fw-bold text-white">FINALIZAR</button>
-            </span>
-
-        </div>
-
-
-    </div>
+  </div>
