@@ -14,9 +14,15 @@ export class ChallengeService {
 
   constructor(private http: HttpClient) { }
 
-  public create(data:any):Observable<any>{
+  public create (data: any): Observable<any> {
     return this.http
       .post(this.apiChallenge, data)
+      .pipe(catchError(handleError));
+  }
+
+  public getById(id: string):Observable<any>{
+    return this.http
+      .get(`${this.apiChallenge}${id}/`)
       .pipe(catchError(handleError));
   }
 
@@ -31,4 +37,8 @@ export class ChallengeService {
       .get(`${this.apiChallenge}${challenge_id}/questions/`)
       .pipe(catchError(handleError));
   }
+  public getChallengeByCategory(category: string) {
+    return this.http
+      .get(`${this.apiChallenge}?category=${category}`)
+      .pipe(catchError(handleError));  }
 }
