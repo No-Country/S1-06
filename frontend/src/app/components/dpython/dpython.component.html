@@ -1,48 +1,44 @@
 <app-navbar></app-navbar>
 
 <div class="container-fluid text-center mt-4">
-    
-        <h1 class="text-light  fw-bold display-2 ">DESAFÍOS DE PYTHON</h1>
-    
+
+  <h1 class="text-light  fw-bold display-2 ">DESAFÍOS DE PYTHON</h1>
+
 </div>
 
 <div class="container-fluid centrar">
-    <div class="container m-2">
-        <h3 class="text-center fw-bold display-4 text-warning ">NIVEL JUNIOR</h3>
-        
-        <div class="row">
+  <div class="container m-2">
+    <h3 class="text-center fw-bold display-4 text-warning ">NIVEL JUNIOR</h3>
 
-            <div class="col-md-6">
-
-                <div class="card shadow bg-light mb-3 mt-4">
-                    <div class="card-header text-center bg-transparent fw-bold">(TÍTULO DEL DESAFÍO)</div>
-                    <div class="card-body">
-                      <p class="card-text">(Descripción del desafío)</p>
-                      <span class="centrar mt-3">
-                        <button class="btn btn-warning fw-bold" [routerLink]="['/inicio-desafío']">REALIZAR</button>
-                      </span>
-                    </div>
-                    <div class="card-footer bg-transparent text-center fw-bold">Creado por: (Nombre de la empresa)</div>
-                  </div>
-    
-            </div>
-
-        </div>
-        
-
+    <div class="row">
+      <div class="col-md-6" *ngFor="let challenge of juniorChallenges">
+        <app-desafio-card [data]="challenge"></app-desafio-card>
+      </div>
     </div>
+
+  </div>
 </div>
 
 <div class="container-fluid centrar">
-    <div class="container m-2">
-        <h3 class="text-center fw-bold display-4 text-warning ">NIVEL SEMI SENIOR</h3>
+  <div class="container m-2">
+    <h3 class="text-center fw-bold display-4 text-warning ">NIVEL SEMI SENIOR</h3>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let challenge of semiChallenges">
+        <app-desafio-card [data]="challenge"></app-desafio-card>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="container-fluid centrar">
-    <div class="container m-2">
-        <h3 class="text-center fw-bold display-4 text-warning ">NIVEL SENIOR</h3>
+  <div class="container m-2">
+    <h3 class="text-center fw-bold display-4 text-warning ">NIVEL SENIOR</h3>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let challenge of seniorChallenges">
+        <app-desafio-card [data]="challenge"></app-desafio-card>
+      </div>
     </div>
+  </div>
 </div>
 
 
