@@ -1,46 +1,48 @@
 <div class="text-center text-white fw-bold mt-3 d-flex justify-content-center align-items-center">
-    <h4>¿Cómo jugar?</h4>
-    <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <i class="fa-solid fa-circle-question fa-xl"></i>
-    </button>
+  <h4>¿Cómo jugar?</h4>
+  <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-solid fa-circle-question fa-xl"></i>
+  </button>
 </div>
 
 <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh">
-    
-    <div class="container">
-        
-        <h3 class="fw-bold display-2 text-white text-center">INICIO DEL DESAFÍO</h3>
-        <span class="d-flex justify-content-center mt-3">
-            <button type="button" class="btn btn-warning btn-lg fw-bold" [routerLink]="['/jugar-desafío']">JUGAR</button>
-        </span>
-    </div>
-    
+
+  <div class="container">
+
+    <h3 class="fw-bold display-2 text-white text-center">INICIO DEL DESAFÍO</h3>
+    <span class="d-flex justify-content-center mt-3">
+      <button type="button" class="btn btn-warning btn-lg fw-bold"
+        [routerLink]="['/jugar-desafio', challenge_id]">JUGAR</button>
+    </span>
+  </div>
+
 
 </div>
 
 <span class="fixed-bottom">
-    <button class="btn btn-dark btn-lg" type="button" onclick="window.history.go(-1);"><i class="fa-solid fa-circle-arrow-left fa-2x"></i></button>
-    
+  <button class="btn btn-dark btn-lg" type="button" onclick="window.history.go(-1);"><i
+      class="fa-solid fa-circle-arrow-left fa-2x"></i></button>
+
 </span>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="container d-flex justify-content-center">
-            <h5 class="modal-title fw-bold" id="exampleModalLabel">INSTRUCCIONES</h5>
-          </span>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <span class="container d-grid gap-2 col-6 mx-auto" [routerLink]="['/registrarse']"><button type="button"
-              class="btn btn-outline-warning" data-bs-dismiss="modal"
-              aria-label="Close"><b>PROGRAMADOR</b></button></span>
-  
-          <span class="container d-grid gap-2 col-6 mx-auto mt-2" [routerLink]="['/registrarse-empresa']"><button
-              type="button" class="btn btn-dark fw-bold" data-bs-dismiss="modal" aria-label="Close">EMPRESA</button>
-          </span>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="container d-flex justify-content-center">
+          <h5 class="modal-title fw-bold" id="exampleModalLabel">INSTRUCCIONES</h5>
+        </span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="container d-grid gap-2 col-6 mx-auto" [routerLink]="['/registrarse']"><button type="button"
+            class="btn btn-outline-warning" data-bs-dismiss="modal"
+            aria-label="Close"><b>PROGRAMADOR</b></button></span>
+
+        <span class="container d-grid gap-2 col-6 mx-auto mt-2" [routerLink]="['/registrarse-empresa']"><button
+            type="button" class="btn btn-dark fw-bold" data-bs-dismiss="modal" aria-label="Close">EMPRESA</button>
+        </span>
       </div>
     </div>
   </div>
+</div>

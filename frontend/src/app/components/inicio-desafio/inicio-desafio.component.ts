@@ -1,4 +1,6 @@
+import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-desafio',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioDesafioComponent implements OnInit {
 
-  constructor() { }
+  isApplicant: boolean = false
+  challenge_id:string = "0"
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService, private _Activatedroute:ActivatedRoute) { }
+  ngOnInit (): void {
+    this.isApplicant = this.authService.getTypeUser() === 'applicant' ? true : false;
+    this._Activatedroute.paramMap.subscribe(params => {
+      this.challenge_id = params.get('challenge_id') ?? "";
+    });
   }
-
 }
