@@ -22,6 +22,10 @@ import { DpythonComponent } from './components/dpython/dpython.component';
 import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.component';
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
+import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
+import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
+import { DesafioCardComponent } from './components/desafio-card/desafio-card.component';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
     DpythonComponent,
     CrearDesafioComponent,
     MiPerfilComponent,
+    InicioDesafioComponent,
+    JugarDesafioComponent,
+    DesafioCardComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,

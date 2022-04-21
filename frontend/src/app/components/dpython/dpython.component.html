@@ -12,14 +12,14 @@
         
         <div class="row">
 
-            <div class="col-md-6" *ngFor="">
+            <div class="col-md-6">
 
                 <div class="card shadow bg-light mb-3 mt-4">
                     <div class="card-header text-center bg-transparent fw-bold">(TÍTULO DEL DESAFÍO)</div>
                     <div class="card-body">
                       <p class="card-text">(Descripción del desafío)</p>
                       <span class="centrar mt-3">
-                        <button class="btn btn-warning fw-bold" (click)="jugar()">REALIZAR</button>
+                        <button class="btn btn-warning fw-bold" [routerLink]="['/inicio-desafío']">REALIZAR</button>
                       </span>
                     </div>
                     <div class="card-footer bg-transparent text-center fw-bold">Creado por: (Nombre de la empresa)</div>
