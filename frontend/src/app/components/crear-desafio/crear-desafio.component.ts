@@ -95,7 +95,6 @@ export class CrearDesafioComponent implements OnInit {
   mostrar(){
     this.estructura = true
     this.inicio = false
-    console.log(this.questions)
     let bloque = document.getElementById('bloque')
 
   }
@@ -147,7 +146,6 @@ export class CrearDesafioComponent implements OnInit {
       this.challenge = result
       const questions = this.getQuestionsForm()
       this.challengeService.addQuestions(questions, this.challenge.id).subscribe(res => {
-        console.log(res)
         Swal.fire({
           icon: 'success',
           title: 'Creado exitosamente!',
