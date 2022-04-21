@@ -50,42 +50,48 @@ class Option(models.Model):
     )
     is_correct = models.BooleanField(default=False)
 
+class ChallengeComplete(models.Model):
+    applicant = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name="challenge_complete"
+    )
+    challenge = models.ForeignKey(
+        Challenge,
+        on_delete=models.CASCADE,
+        related_name="challenge_complete"
+    )
+    duration = models.TimeField(null=True , blank=True)
 
-# class Answer(models.Model):
-#     question = models.ForeignKey(
-#         Question,
-#         on_delete=models.CASCADE,
-#         related_name="answers"
-#     )
+    @property
+    def score(self):
+        answers = self.answers.select_related('choice').all()
+        count = 0
+        for answer in answers:
+            if (answer.choice.is_correct == True):
+                count = count + 1
+        return f"{count} de {len(answers)}"
 
-#     choice = models.ForeignKey(
-#         Option,
-#         on_delete=models.CASCADE,
-#         related_name="answers"
-#     )
+    def add_answers(self, answers):
+        for answer in answers:
+            answer['challenge_applicant_id'] = self.id
+            Answer.objects.create(**answer)
 
-# class ChallengeComplete(models.Model):
-#     applicant = models.ForeignKey(
-#         get_user_model(),
-#         on_delete=models.CASCADE,
-#         related_name="challenge_complete"
-#     )
-#     challenge = models.ForeignKey(
-#         Challenge,
-#         on_delete=models.CASCADE,
-#         related_name="challenge_complete"
-#     )
-#     answers = models.ForeignKey(
-#         Answer,
-#         on_delete=models.CASCADE,
-#         related_name="challenge_complete"
-#     ),
+class Answer(models.Model):
+    question = models.ForeignKey(
+        Question,
+        on_delete=models.CASCADE,
+        related_name="answers"
+    )
 
-#     @property
-#     def get_score(self):
-#         answers = self.answers.select_related('choice').all()
-#         count = 0
-#         for answer in answers:
-#             if (answer.choice.is_correct == True):
-#                 count = count + 1
-#         return f"{count}/{len(answers)}"
+    choice = models.ForeignKey(
+        Option,
+        on_delete=models.CASCADE,
+        related_name="answers"
+    )
+
+    challenge_applicant = models.ForeignKey(
+        ChallengeComplete,
+        on_delete=models.CASCADE,
+        related_name="answers"
+    )
