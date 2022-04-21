@@ -1,9 +1,15 @@
 <div class="card m-4" >
-    <div class="card-header text-warning text-center">
-        <div class="container-fluid">
-            <span class="container d-flex justify-content-center"><h3 class="fw-bold mt-2">(NOMBRE DEL DESAFÍO)</h3></span>
-            <button type="button" class=" btn btn-dark"></button>
+    <div class="card-header text-warning">
+        <div class="row">
+            <div class="col-md-11 text-center">
+                <h3 class="fw-bold mt-2">(NOMBRE DEL DESAFÍO)</h3>
+            </div>
+            <div class="col-md-1 pt-2">
+                <button type="button" class="btn btn-dark fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">SALIR</button>
+            </div>
         </div>
+        
+
 
     </div>
     <div class="card-body">
@@ -136,3 +142,19 @@
 
 
     </div>
+
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-warning">
+            <div class="modal-header bg-light centrar fw-bold border-warning">
+                <span class="container d-flex justify-content-center"><h5 class="modal-title " id="exampleModalLabel">INFORMACIÓN</h5></span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body border-warning">
+                <span class="container d-grid gap-2 col-6 mx-auto"><button type="button" class="btn btn-warning fw-bold" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">LOGROS DE LOS DESAFÍOS</button></span>
+              
+                <span class="container d-grid gap-2 col-6 mx-auto mt-2"><button type="button" class="btn btn-dark fw-bold" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">PERFIL Y EMPRESAS</button>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>

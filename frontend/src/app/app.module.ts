@@ -23,6 +23,7 @@ import { CrearDesafioComponent } from './components/crear-desafio/crear-desafio.
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
 import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
+import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solicitud-empresa.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.
     MiPerfilComponent,
     InicioDesafioComponent,
     JugarDesafioComponent,
+    SolicitudEmpresaComponent,
   ],
   imports: [
     BrowserModule,
