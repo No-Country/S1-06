@@ -19,9 +19,20 @@ export class ApplicantService {
    return this.http
      .post(this.apiApplicant, data)
      .pipe(catchError(handleError));
-
  }
   public getApplicants(){
     return this.http.get(this.apiApplicant);
+  }
+
+  public completeChallenge (data: any, user_id: any, challenge_id: any) {
+   return this.http
+     .post(`${this.apiApplicant}${user_id}/challenge/${challenge_id}/`, data)
+     .pipe(catchError(handleError));
+  }
+
+  public verifyChallenge ( challenge_id: any) {
+    return this.http
+     .get(`${this.apiApplicant}/challenge/${challenge_id}/verify`)
+     .pipe(catchError(handleError));
   }
 }
