@@ -48,4 +48,11 @@ export class AuthService {
       return 'applicant'
     }
   }
+  public getCurrentUser (): any{
+    let user: any = localStorage.getItem('user')
+    if (user) {
+      return JSON.parse(user)
+    }
+    return null
+  }
 }
