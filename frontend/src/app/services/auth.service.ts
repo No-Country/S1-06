@@ -50,8 +50,15 @@ export class AuthService {
   }
   public getCurrentUser (): any{
     let user: any = localStorage.getItem('user')
+    let profile: any = localStorage.getItem('profile')
     if (user) {
-      return JSON.parse(user)
+      let userParse = JSON.parse(user)
+      let profileParse = {}
+      if (profile) {
+        profileParse = JSON.parse(profile)
+      }
+      userParse['profile'] = profileParse
+      return userParse
     }
     return null
   }
