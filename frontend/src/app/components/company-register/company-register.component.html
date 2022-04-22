@@ -60,11 +60,9 @@
 
     <!--País-->
     <div class="col-md-4">
-      <label for="inputState" class="form-label text-white">País *</label>
-      <select id="inputState" class="form-select bg-dark text-white" required name="country" [(ngModel)]="country">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
+      <label for="inputCountry" class="form-label text-white">País *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputCountry" placeholder="País" autocomplete="off"
+        required name="country" [(ngModel)]="country">
     </div>
 
     <!--Provincia-->
@@ -72,13 +70,6 @@
       <label for="inputCity" class="form-label text-white">Provincia *</label>
       <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Provincia"
         autocomplete="off" required name="state" [(ngModel)]="state">
-    </div>
-
-    <!--Localidad-->
-    <div class="col-md-4">
-      <label for="inputZip" class="form-label text-white">Localidad *</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Localidad"
-        autocomplete="off" required name="locality" [(ngModel)]="locality">
     </div>
 
     <!--Código postal-->
@@ -90,18 +81,10 @@
 
     <!--Calle-->
     <div class="col-md-4">
-      <label for="inputZip" class="form-label text-white">Calle *</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Calle" autocomplete="off"
-        required name="street" [(ngModel)]="street">
+      <label for="inputZip" class="form-label text-white">Ciudad *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Ciuadad" autocomplete="off"
+        required name="street" [(ngModel)]="city">
     </div>
-
-    <!--Altura-->
-    <div class="col-md-4">
-      <label for="inputZip" class="form-label text-white">Altura *</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Altura" autocomplete="off"
-        required name="by" [(ngModel)]="by">
-    </div>
-
     <!--Razón de la solicitud-->
     <h4 class="text-white mt-3">¿Por qué quieres una cuenta de empresa?</h4>
     <div class="col-md-12">

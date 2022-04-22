@@ -44,11 +44,9 @@
 
     <!--País-->
     <div class="col-md-4">
-      <label for="inputState" class="form-label text-white">País *</label>
-      <select id="inputState" class="form-select bg-dark text-white" required name="nationality" [(ngModel)]="country">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
+      <label for="inputCountry" class="form-label text-white">País *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputCountry" placeholder="País" autocomplete="off"
+        required name="country" [(ngModel)]="country">
     </div>
 
     <!--Provincia-->
@@ -115,8 +113,9 @@
           <h5 class="modal-title" id="exampleModalLabel">TÉRMINOS Y CONDICIONES</h5>
         </div>
         <div class="col-1 bg-dark centrar">
-          <button type="button" class="btn-close pr-2 max-content btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-         
+          <button type="button" class="btn-close pr-2 max-content btn-close-white" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+
         </div>
       </div>
 
