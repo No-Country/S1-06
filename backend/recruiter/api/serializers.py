@@ -7,7 +7,7 @@ from users.models import Location
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ('country', 'city', 'postal_code')
+        fields = ('country', 'city', 'postal_code', 'province')
         ref_name = 'RecruiterLocation'
 
 
@@ -16,7 +16,7 @@ class RecruiterProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RecruiterProfile
-        fields = ('phone', 'name', 'location')
+        fields = ('phone', 'name', 'location', 'description', 'request_reason')
 
 
 class RecruiterUserSerializer(serializers.ModelSerializer):
@@ -25,13 +25,14 @@ class RecruiterUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = (
+            'id',
             'email',
             'password',
             'recruiter_profile',
             'is_active',
             'is_recruiter'
         )
-        read_only_fields = ('is_active', 'is_recruiter')
+        read_only_fields = ('is_active', 'is_recruiter', 'id')
         extra_kwargs = {
             'password': {
                 'write_only': True,
