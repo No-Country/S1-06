@@ -2,6 +2,7 @@
   <div class="card-header text-center bg-transparent fw-bold">{{data.title}}</div>
   <div class="card-body">
     <p class="card-text">{{data.description}}</p>
+    <p class="card-text">(DURACIÓN DEL DESAFÍO)</p>
     <span class="centrar mt-3" *ngIf="isApplicant">
       <button class="btn btn-warning fw-bold" *ngIf="isApplicant()"
         [routerLink]="['/inicio-desafio', data.id]">REALIZAR</button>

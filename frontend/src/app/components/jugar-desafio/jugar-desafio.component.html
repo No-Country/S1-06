@@ -12,6 +12,7 @@
   </div>
 
   <div class="card-body">
+    <p class="card-text text-center">(DURACIÓN DEL DESAFÍO)</p>
     <form #f="ngForm" (ngSubmit)="f.form.valid " class="row g-3 rounded">
       <app-question [data]="question" [index]="indexOfelement"
         *ngFor="let question of challenge.questions;let indexOfelement=index;">
