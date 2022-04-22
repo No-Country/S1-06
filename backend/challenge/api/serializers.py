@@ -6,7 +6,7 @@ from challenge.models import Category, Question, Option, Challenge, \
     ChallengeComplete, Answer
 from users.api.serializers import UserSerializer
 from recruiter.api.serializers import RecruiterProfileSerializer
-
+from applicant.api.serializers import ApplicantUserSerializer
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -69,6 +69,7 @@ class ChallengeSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         data = super().to_representation(instance)
         user = get_user_model().objects.get(pk=data['created_by'])
+        data['category'] = CategorySerializer(instance=Category.objects.get(pk=instance.category_id)).data
         data['created_by'] = {'user': UserSerializer(instance=user).data, "profile": {}}
         profile = {}
         if (user.is_recruiter):
@@ -98,7 +99,6 @@ class AnswerCreateSerializer(serializers.ModelSerializer):
         fields = ('id', 'question', 'choice')
         extra_kwargs = {'id': {'read_only': True}}
 
-
 class ChallengeCompleteSerializer(serializers.ModelSerializer):
     answers = AnswerCreateSerializer(many=True)
     challenge = serializers.PrimaryKeyRelatedField(
@@ -127,4 +127,23 @@ class ChallengeCompleteSerializer(serializers.ModelSerializer):
         challenge_complete.add_answers(answers)
 
         return challenge_complete
+
+    def to_representation(self, instance):
+        return super().to_representation(instance)
+
+class ChallengesApplicantSerializer(serializers.ModelSerializer):
+    challenge = ChallengeSerializer()
+    applicant = serializers.PrimaryKeyRelatedField(
+        queryset=get_user_model().objects.all()
+    )
+    class Meta:
+        model = ChallengeComplete
+        fields = ('id', 'applicant', 'challenge', 'score', 'duration')
+
+
+class ChallengesRecruiterSerializer(serializers.ModelSerializer):
+    applicant = ApplicantUserSerializer()
+    class Meta:
+        model = ChallengeComplete
+        fields = ('id', 'applicant', 'score', 'challenge', 'duration')
 
