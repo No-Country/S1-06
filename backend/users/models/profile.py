@@ -15,3 +15,4 @@ class Location(models.Model):
     country = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     postal_code = models.CharField(max_length=10)
+    province = models.CharField(default="", max_length=100)
