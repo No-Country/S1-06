@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate([dashboardName]);
        },
         (errorResponse) => {
-          if (errorResponse.status == 401) {
+          if (errorResponse == 'Unauthorized') {
             this.swalError('Correo electrónico o contraseña invalidas!')
           } else {
             this.swalError('Error de servidor')
