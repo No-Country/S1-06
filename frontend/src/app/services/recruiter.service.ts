@@ -21,7 +21,22 @@ export class RecruiterService {
      .pipe(catchError(handleError));
 
  }
+ public getById(id:any):Observable<any>{
+   return this.http
+     .get(this.apiRecruiter + id + '/')
+     .pipe(catchError(handleError));
+ }
   public getApplicants(){
     return this.http.get(this.apiRecruiter);
+  }
+  public getAll () {
+   return this.http
+     .get(this.apiRecruiter)
+     .pipe(catchError(handleError));
+  }
+  public getChallenges (user_id: any) {
+   return this.http
+     .get(`${ this.apiRecruiter }${user_id}/challenges/`)
+     .pipe(catchError(handleError));
   }
 }
