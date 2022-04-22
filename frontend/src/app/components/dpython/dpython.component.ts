@@ -21,15 +21,11 @@ export class DpythonComponent implements OnInit {
 
   ngOnInit (): void {
     this.isApplicant = this.authService.getTypeUser() === 'applicant' ? true : false;
-    this.challengeService.getChallengeByCategory('python').subscribe(res => {
+\    this.challengeService.getChallengeByCategory('python').subscribe(res => {
       this.challenges = res
       this.juniorChallenges = this.getChallengesByLevel('Junior')
       this.semiChallenges = this.getChallengesByLevel('Semisenior')
       this.seniorChallenges = this.getChallengesByLevel('Senior')
-      console.table(this.juniorChallenges)
-      console.table(this.semiChallenges)
-      console.table(this.seniorChallenges)
-
     })
   }
 
