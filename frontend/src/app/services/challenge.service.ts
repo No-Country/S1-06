@@ -40,5 +40,10 @@ export class ChallengeService {
   public getChallengeByCategory(category: string) {
     return this.http
       .get(`${this.apiChallenge}?category=${category}`)
+      .pipe(catchError(handleError));
+  }
+  public getApplicants(challenge_id: number) {
+    return this.http
+      .get(`${this.apiChallenge}${challenge_id}/applicants/`)
       .pipe(catchError(handleError));  }
 }
