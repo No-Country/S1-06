@@ -2,7 +2,7 @@ import {throwError} from 'rxjs';
 import Swal from 'sweetalert2';
 
 export function handleError (error: any) {
-      let errorMessage = '';
+  let errorMessage = '';
       if (error.status === 400) {
         const errors = error.error
         let html = ''
@@ -24,8 +24,13 @@ export function handleError (error: any) {
           text: errorMessage,
         })
       }
+     if (error === 'Not Found') {
+      return throwError(() => {
+        return errorMessage;
+      });
+      }
       else {
-         errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+         errorMessage = "Error de servidor";
           Swal.fire({
             title: 'Error',
             icon: 'error',
