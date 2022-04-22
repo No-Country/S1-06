@@ -10,6 +10,7 @@ import { KeyValueChanges, KeyValueDiffer, KeyValueDiffers } from '@angular/core'
 export class QuestionComponent implements OnInit {
   @Input()data:any;
   @Input()index:any;
+  @Input()selected: Array<any> = [];
 
   da: any;
 
@@ -23,6 +24,9 @@ export class QuestionComponent implements OnInit {
     this.questionService.questionDispatch.emit({
       ...payload
     })
+  }
+  checked (option: any):Boolean{
+    return this.selected.includes(option)
   }
 
 }

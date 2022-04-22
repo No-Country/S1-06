@@ -5,7 +5,11 @@
 <div class="col-md-12">
   <label for="inputEmail4" class="form-label fw-bold mx-1">Opciones:</label>
   <div class="radio mb-1" *ngFor="let option of data.options">
-    <label>
+    <label *ngIf="checked(option.id)">
+      <input type="radio" (change)="onChangeEvent($event)" name="optradio{{index}}" checked
+        value="{{option.id}}">{{option.text}}
+    </label>
+    <label *ngIf="!checked(option.id)">
       <input type="radio" (change)="onChangeEvent($event)" name="optradio{{index}}"
         value="{{option.id}}">{{option.text}}
     </label>
