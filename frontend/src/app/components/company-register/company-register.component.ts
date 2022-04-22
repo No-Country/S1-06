@@ -16,14 +16,12 @@ export class CompanyRegisterComponent implements OnInit {
   description!: string;
   password!: string;
   tpassword!: string
-
+  reason!: string;
   //Ubicación de las oficinas
   country!: string;
   state!: string;
-  locality!: string;
   postalCode!: string;
-  street!: string;
-  by!: string;
+  city!: string;
 
   //Razón de la solicitud, términos y condiciones, y verificar password
   checkpass!: boolean
@@ -56,10 +54,12 @@ export class CompanyRegisterComponent implements OnInit {
       const profile = {
       name: this.name,
       phone: this.phone,
+      request_reason: this.reason,
+      description: this.description,
       location: {
         country: this.country,
-        city: 'this.city',
-        postal_code: this.postalCode
+        city: this.city,
+        postal_code: this.postalCode,
       }
     }
     let applicant = {
