@@ -19,7 +19,11 @@ class Challenge(models.Model):
     description = models.TextField(_('description'))
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     level = models.CharField(max_length=255, choices=LEVELS)
-    created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    created_by = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name="challenges"
+    )
 
     def add_questions(self, questions):
         for question in questions:
