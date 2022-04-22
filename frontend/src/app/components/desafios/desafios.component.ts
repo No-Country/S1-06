@@ -15,6 +15,7 @@ export class DesafiosComponent implements OnInit {
 
   ngOnInit (): void {
     this.isNotApplicant = ['admin', 'recruiter'].includes(this.authService.getTypeUser())
+    console.log(this.isNotApplicant)
     this._Activatedroute.paramMap.subscribe(params => {
       this.challenge_id = params.get('challenge_id') ?? "";
     });
