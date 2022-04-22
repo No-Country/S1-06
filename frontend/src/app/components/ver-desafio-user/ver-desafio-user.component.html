@@ -1,0 +1,20 @@
+<p>ver-desafio-user works!</p>
+<div class="card m-4">
+  <div class="card-header text-warning">
+    <div class="row">
+      <div class="col-md-11 text-center">
+        <h3 class="fw-bold mt-2">{{title}}</h3>
+      </div>
+      <div class="col-md-1 pt-2">
+        <button type="button" class="btn btn-dark fw-bold" onclick="window.history.go(-1);">Volver</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <form #f="ngForm" (ngSubmit)="f.form.valid " class="row g-3 rounded">
+      <app-question [data]="question" [selected]="selected" [index]="indexOfelement"
+        *ngFor="let question of challenge.questions;let indexOfelement=index;">
+      </app-question>
+    </form>
+  </div>
+</div>
