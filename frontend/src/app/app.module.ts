@@ -27,6 +27,11 @@ import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.
 import { DesafioCardComponent } from './components/desafio-card/desafio-card.component';
 import { QuestionComponent } from './components/question/question.component';
 import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solicitud-empresa.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { PublicProfileUserComponent } from './components/public-profile-user/public-profile-user.component';
+import { PublicProfileCompanyComponent } from './components/public-profile-company/public-profile-company.component';
+import { VerDesafioUserComponent } from './components/ver-desafio-user/ver-desafio-user.component';
+import { EditarDesafioComponent } from './components/editar-desafio/editar-desafio.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,11 @@ import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solici
     DesafioCardComponent,
     QuestionComponent,
     SolicitudEmpresaComponent,
+    LoaderComponent,
+    PublicProfileUserComponent,
+    PublicProfileCompanyComponent,
+    VerDesafioUserComponent,
+    EditarDesafioComponent,
   ],
   imports: [
     BrowserModule,

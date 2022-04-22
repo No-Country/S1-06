@@ -16,6 +16,11 @@ import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
 import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
 import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solicitud-empresa.component';
+import { PublicProfileUserComponent } from './components/public-profile-user/public-profile-user.component';
+import { PublicProfileCompanyComponent } from './components/public-profile-company/public-profile-company.component';
+import { VerDesafioUserComponent } from './components/ver-desafio-user/ver-desafio-user.component'
+import { EditarDesafioComponent } from './components/editar-desafio/editar-desafio.component'
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,7 +38,12 @@ const routes: Routes = [
   {path: 'mi-perfil', component: MiPerfilComponent},
   {path: 'inicio-desafio/:challenge_id', component: InicioDesafioComponent},
   {path: 'jugar-desafio/:challenge_id', component: JugarDesafioComponent},
-  {path: 'solicitudes-de-empresas', component: SolicitudEmpresaComponent}
+  {path: 'solicitudes-de-empresas', component: SolicitudEmpresaComponent },
+  { path: 'perfil/user/:user_id', component: PublicProfileUserComponent },
+  { path: 'perfil/company/:company_id', component: PublicProfileCompanyComponent },
+  { path: 'desafio/:challenge_id/user/:user_id', component: VerDesafioUserComponent },
+  { path: 'desafio/:challenge_id/editar', component: EditarDesafioComponent },
+
 ];
 
 @NgModule({
