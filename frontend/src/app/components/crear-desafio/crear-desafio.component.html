@@ -45,17 +45,20 @@
         </div>
 
         <div class="card-footer mt-4">
-            <div class="col-12 centrar">
-                <!--Botón volver-->
-                <div class="d-grid gap-2 col-3 mx-3">
-                  <button class="btn btn-dark text-white fw-bold" type="button" 
-                    onclick="window.history.go(-1);">VOLVER</button>
-                </div>
-                <!--Botón aceptar-->
-                <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white fw-bold" 
-                    type="submit" [disabled]="!f.form.valid" (click)="mostrar()">ACEPTAR</button>
-                </div>
+            
+            <div class="row g-3">
+                <div class="col-12 centrar">
+                    <!--Botón volver-->
+                    <div class="d-grid gap-2 col-md-3 mx-3">
+                      <button class="btn btn-dark text-white fw-bold" type="button" 
+                        onclick="window.history.go(-1);">VOLVER</button>
+                    </div>
+                    <!--Botón aceptar-->
+                    <div class="d-grid gap-2 col-md-3"> <button class="btn btn-warning text-white fw-bold" 
+                        type="submit" [disabled]="!f.form.valid" (click)="mostrar()">ACEPTAR</button></div>
+                  </div>
             </div>
+
 
         </div>
     </div>
@@ -204,17 +207,19 @@
         </div>
 
         <div class="card-footer mt-3">
-            <div class="col-12 centrar mt-3">
-                <!--Botón volver-->
-                <div class="d-grid gap-2 col-3 mx-3">
-                  <button class="btn btn-dark text-white fw-bold" type="button" 
-                    (click)="inverso()">VOLVER</button>
-                </div>
-                <!--Botón aceptar-->
-                <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white fw-bold" 
-                    type="submit" [disabled]="!f.form.valid">ACEPTAR</button>
-                </div>
+            <div class="row g-3">
+                <div class="col-12 centrar mt-3">
+                    <!--Botón volver-->
+                    <div class="d-grid gap-2 col-md-3 mx-3">
+                      <button class="btn btn-dark text-white fw-bold" type="button" 
+                      (click)="inverso()">VOLVER</button>
+                    </div>
+                    <!--Botón aceptar-->
+                    <div class="d-grid gap-2 col-md-3"> <button class="btn btn-warning text-white fw-bold" 
+                        type="submit" [disabled]="!f.form.valid">ACEPTAR</button></div>
+                  </div>
             </div>
+            
 </div>
 
 

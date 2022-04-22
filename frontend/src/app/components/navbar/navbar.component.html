@@ -21,6 +21,10 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/perfiles']"><B>Perfiles</B></a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link active" [routerLink]="['/contacto']"><b>Contacto</b></a>
         </li>
 
@@ -58,6 +62,8 @@
     <ul class="container-fluid list-group" aria-labelledby="botonLogin">
       <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mi-perfil']" class="link text-dark fw-bold"
           data-bs-dismiss="offcanvas">Mi perfil</a></li>
+          <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mis-desafíos']" class="link text-dark fw-bold"
+            data-bs-dismiss="offcanvas">Mis desafíos</a></li>
       <li class="container-fluid list-group-item centrar"><a (click)="cerrarsesion()" class="link text-dark fw-bold"
           data-bs-dismiss="offcanvas">Cerrar sesión</a></li>
     </ul>

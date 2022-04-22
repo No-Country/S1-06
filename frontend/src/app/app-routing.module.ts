@@ -16,6 +16,7 @@ import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
 import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
 import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solicitud-empresa.component';
+import { ResultadoDesafioComponent } from './components/resultado-desafio/resultado-desafio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,7 +34,9 @@ const routes: Routes = [
   {path: 'mi-perfil', component: MiPerfilComponent},
   {path: 'inicio-desafío', component: InicioDesafioComponent},
   {path: 'jugar-desafío', component: JugarDesafioComponent},
-  {path: 'solicitudes-de-empresas', component: SolicitudEmpresaComponent}
+  {path: 'solicitudes-de-empresas', component: SolicitudEmpresaComponent},
+  {path: 'resultado-desafío', component: ResultadoDesafioComponent},
+  {path: 'perfiles', component: PerfilesComponent}
 ];
 
 @NgModule({

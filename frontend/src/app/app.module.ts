@@ -24,6 +24,7 @@ import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 import { InicioDesafioComponent } from './components/inicio-desafio/inicio-desafio.component';
 import { JugarDesafioComponent } from './components/jugar-desafio/jugar-desafio.component';
 import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solicitud-empresa.component';
+import { ResultadoDesafioComponent } from './components/resultado-desafio/resultado-desafio.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SolicitudEmpresaComponent } from './components/solicitud-empresa/solici
     InicioDesafioComponent,
     JugarDesafioComponent,
     SolicitudEmpresaComponent,
+    ResultadoDesafioComponent,
   ],
   imports: [
     BrowserModule,
