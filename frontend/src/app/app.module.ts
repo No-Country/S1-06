@@ -32,6 +32,7 @@ import { PublicProfileUserComponent } from './components/public-profile-user/pub
 import { PublicProfileCompanyComponent } from './components/public-profile-company/public-profile-company.component';
 import { VerDesafioUserComponent } from './components/ver-desafio-user/ver-desafio-user.component';
 import { EditarDesafioComponent } from './components/editar-desafio/editar-desafio.component';
+import { ResultadoDesafioComponent } from './components/resultado-desafio/resultado-desafio.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { EditarDesafioComponent } from './components/editar-desafio/editar-desaf
     PublicProfileCompanyComponent,
     VerDesafioUserComponent,
     EditarDesafioComponent,
+    ResultadoDesafioComponent,
   ],
   imports: [
     BrowserModule,

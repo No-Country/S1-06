@@ -20,7 +20,7 @@ import { PublicProfileUserComponent } from './components/public-profile-user/pub
 import { PublicProfileCompanyComponent } from './components/public-profile-company/public-profile-company.component';
 import { VerDesafioUserComponent } from './components/ver-desafio-user/ver-desafio-user.component'
 import { EditarDesafioComponent } from './components/editar-desafio/editar-desafio.component'
-
+import { ResultadoDesafioComponent } from './components/resultado-desafio/resultado-desafio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -44,6 +44,9 @@ const routes: Routes = [
   { path: 'desafio/:challenge_id/user/:user_id', component: VerDesafioUserComponent },
   { path: 'desafio/:challenge_id/editar', component: EditarDesafioComponent },
 
+  {path: 'solicitudes-de-empresas', component: SolicitudEmpresaComponent},
+  {path: 'resultado-desafío', component: ResultadoDesafioComponent},
+  {path: 'perfiles', component: PerfilesComponent}
 ];
 
 @NgModule({
