@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <h3 class="text-light text-center fw-bold display-4 mt-3">{{name}}</h3>
+</div>
+
+<div class="container text-light">
+  <div class="row centrar m-1">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+
+      <div class="card shadow bg-light mb-3 mt-4 border-warning">
+        <div class="card-header bg-transparent fw-bold text-center text-dark">Nombre: {{name}}</div>
+        <div class="card-body">
+          <p class="card-text text-dark">Correo electrónico: {{email}}</p>
+          <p class="card-text text-dark ">Telefono: {{phone}}</p>
+          <p class="card-text text-dark text-center mt-4">País: {{country}},Provincia:
+            {{province}}, Ciudad: {{city}},
+            Código postal: {{code}} )</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
+
+<div>
+  <div class="container-fluid">
+    <h3 class="text-light text-center fw-bold display-4 mt-3">HISTORIAL DE DESAFÍOS</h3>
+  </div>
+
+  <div class="table-responsive m-3">
+    <table class="table text-light table-bordered mt-3">
+      <thead class="fw-bold text-center">
+        <tr>
+          <th>TÍTULO DEL DESAFÍO</th>
+          <th>TECNOLOGÍA</th>
+          <th>NIVEL</th>
+          <th>PUNTAJE</th>
+          <th>Empresa</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let challenge of challengesApplicant">
+          <td>{{challenge.challenge.title}}</td>
+          <td>{{challenge.challenge.category.name}}</td>
+          <td>{{challenge.challenge.level}}</td>
+          <td>{{challenge.score}}</td>
+          <td><a
+              [routerLink]="['/perfil/company/', challenge.challenge.created_by.user.id]">{{getCreatedBy(challenge.challenge.created_by)}}</a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+</div>
