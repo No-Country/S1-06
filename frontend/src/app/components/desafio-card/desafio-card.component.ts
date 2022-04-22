@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DesafioCardComponent implements OnInit {
   @Input()data:any;
-  created_by: String = '';
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
-  getCreatedBy (): void {
-
+  getCreatedBy (): string {
+    return this.data.created_by.profile.name ?? "Admin"
+  }
+  isApplicant (): Boolean {
+    return this.authService.getTypeUser() === 'applicant' ? true : false;
   }
 }

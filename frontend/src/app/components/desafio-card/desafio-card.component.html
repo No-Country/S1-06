@@ -2,11 +2,10 @@
   <div class="card-header text-center bg-transparent fw-bold">{{data.title}}</div>
   <div class="card-body">
     <p class="card-text">{{data.description}}</p>
-    <span class="centrar mt-3">
-      <button class="btn btn-warning fw-bold" [routerLink]="['/inicio-desafio', data.id]">REALIZAR</button>
-      <!-- <button class="btn btn-warning fw-bold" *ngIf="isApplicant"
-                [routerLink]="['/inicio-desafío']">REALIZAR</button> -->
+    <span class="centrar mt-3" *ngIf="isApplicant">
+      <button class="btn btn-warning fw-bold" *ngIf="isApplicant()"
+        [routerLink]="['/inicio-desafio', data.id]">REALIZAR</button>
     </span>
   </div>
-  <div class="card-footer bg-transparent text-center fw-bold">Creado por: </div>
+  <div class="card-footer bg-transparent text-center fw-bold">Creado por: {{ getCreatedBy()}} </div>
 </div>
