@@ -11,8 +11,7 @@
 
     <h3 class="fw-bold display-2 text-white text-center">INICIO DEL DESAFÍO</h3>
     <span class="d-flex justify-content-center mt-3">
-      <button type="button" class="btn btn-warning btn-lg fw-bold"
-        [routerLink]="['/jugar-desafio', challenge_id]">JUGAR</button>
+      <button type="button" class="btn btn-warning btn-lg fw-bold" (click)="goToChallenge()">JUGAR</button>
     </span>
   </div>
 
