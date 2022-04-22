@@ -21,7 +21,7 @@ class ApplicantProfileSerializer(serializers.ModelSerializer):
             'last_name',
             'phone',
             'birthday',
-            'location'
+            'location',
         )
 
 
@@ -32,13 +32,14 @@ class ApplicantUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = (
+            'id',
             'email',
             'password',
             'applicant_profile',
             'is_active',
-            'is_applicant'
+            'is_applicant',
         )
-        read_only_fields = ('is_active', 'is_applicant')
+        read_only_fields = ('is_active', 'is_applicant', 'id')
         extra_kwargs = {
             'password': {
                 'write_only': True,
