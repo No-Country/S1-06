@@ -5,27 +5,37 @@
 <div class="container-fluid">
 
   <div clas="row m-1">
-    <div class="col-md-12 d-flex justify-content-center">
-      <button [routerLink]="['/solicitudes-de-empresas']" class="btn btn-warning fw-bold">SOLICITUDES DE EMPRESAS</button>
+    <div class="col-md-12 d-flex justify-content-center" *ngIf="isAdmin()">
+      <button [routerLink]="['/solicitudes-de-empresas']" class="btn btn-warning fw-bold">SOLICITUDES DE
+        EMPRESAS</button>
+    </div>
+
+
+  </div>
+
+  <div class="row m-1">
+    <div class="col-md-4" *ngFor="let recruiter of recruiters">
+
+      <div class="card shadow bg-light mb-3 mt-4 border-warning text-center">
+        <div class="card-header bg-transparent fw-bold text-center text-dark">{{recruiter.recruiter_profile.name}}</div>
+        <div class="card-body">
+          <p class="card-text text-dark">{{recruiter.recruiter_profile.description}}</p>
+        </div>
+        <div class="card-footer bg-transparent text-center text-dark fw-bold">Ubicación: (Ciudad:
+          {{recruiter.recruiter_profile.location.city}}, Provincia: {{ recruiter.recruiter_profile.location.province}},
+          País: {{recruiter.recruiter_profile.location.country}})
+        </div>
+        <span class="centrar mt-3">
+          <button class="btn btn-warning fw-bold" style="margin-right: 5px;"
+            [routerLink]="['/perfil/company/', recruiter.id]">
+            Ver perfil</button>
+        </span>
+      </div>
+
     </div>
 
   </div>
 
-    <div class="row m-1">
-        <div class="col-md-4">
-
-            <div class="card shadow bg-light mb-3 mt-4 border-warning">
-                <div class="card-header bg-transparent fw-bold text-center text-dark">(NOMBRE EMPRESA)</div>
-                <div class="card-body">
-                  <p class="card-text text-dark">(Descripción empresa)</p>
-                </div>
-                <div class="card-footer bg-transparent text-center text-dark fw-bold">Ubicación: (Localidad, Provincia, País)</div>
-              </div>
-        
-        </div>
-
-    </div>
-    
 
 
 </div>
