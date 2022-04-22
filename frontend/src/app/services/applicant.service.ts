@@ -20,6 +20,11 @@ export class ApplicantService {
      .post(this.apiApplicant, data)
      .pipe(catchError(handleError));
  }
+ public getById(id:any):Observable<any>{
+   return this.http
+     .get(this.apiApplicant + id + '/')
+     .pipe(catchError(handleError));
+ }
   public getApplicants(){
     return this.http.get(this.apiApplicant);
   }
@@ -30,9 +35,21 @@ export class ApplicantService {
      .pipe(catchError(handleError));
   }
 
+  public getChallenges (user_id: any,) {
+   return this.http
+     .get(`${this.apiApplicant}${user_id}/challenges/`)
+     .pipe(catchError(handleError));
+  }
+
   public verifyChallenge ( challenge_id: any) {
     return this.http
-     .get(`${this.apiApplicant}/challenge/${challenge_id}/verify`)
+     .get(`${this.apiApplicant}challenge/${challenge_id}/verify/`)
+     .pipe(catchError(handleError));
+  }
+
+  public getAnswersChallenge (user_id: any, challenge_id: any) {
+    return this.http
+     .get(`${this.apiApplicant}${user_id}/challenge/${challenge_id}/answers/`)
      .pipe(catchError(handleError));
   }
 }
