@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light ">
   <div class="container-fluid">
-    <a [routerLink]="['']"><img src="../../../assets/img/isologotipo1.png" width="50px" height="50px" alt="." class=""></a>
+    <a [routerLink]="['']"><img src="../../../assets/img/isologotipo1.png" width="50px" height="50px" alt="."
+        class=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,20 +51,20 @@
 
 </nav>
 
-<div class="offcanvas offcanvas-end bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+<div class="offcanvas offcanvas-end bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header text-white">
-    <div class = "container-fluid text-center">
-      <h3 class="offcanvas-title fw-bold text-warning" id="offcanvasWithBothOptionsLabel">USUARIO</h3>
+    <div class="container-fluid text-center">
+      <h3 class="offcanvas-title fw-bold text-warning" id="offcanvasWithBothOptionsLabel">{{name}}</h3>
     </div>
-    <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
 
     <ul class="container-fluid list-group" aria-labelledby="botonLogin">
-      <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mi-perfil']" class="link text-dark fw-bold"
-          data-bs-dismiss="offcanvas">Mi perfil</a></li>
-          <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mis-desafíos']" class="link text-dark fw-bold"
-            data-bs-dismiss="offcanvas">Mis desafíos</a></li>
+      <li class="container-fluid list-group-item centrar"><a [routerLink]="['/mi-perfil']"
+          class="link text-dark fw-bold" data-bs-dismiss="offcanvas">Mi perfil</a></li>
       <li class="container-fluid list-group-item centrar"><a (click)="cerrarsesion()" class="link text-dark fw-bold"
           data-bs-dismiss="offcanvas">Cerrar sesión</a></li>
     </ul>
@@ -72,4 +73,3 @@
 </div>
 
 <br><br><br>
-
