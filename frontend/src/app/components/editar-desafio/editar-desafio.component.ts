@@ -18,6 +18,7 @@ export class EditarDesafioComponent implements OnInit {
   descripcion!: string
   lenguaje!: string
   nivel!: string
+  duration!: string
   categories!:Array<any>
   //Validación
   inicio: boolean = true
@@ -103,6 +104,7 @@ export class EditarDesafioComponent implements OnInit {
           this.descripcion = this.challenge.description
           this.lenguaje = this.challenge.category.id
           this.nivel = this.challenge.level
+          this.duration = this.challenge.duration
           // this.applicantService.getAnswersChallenge(this.user_id, this.challenge_id).subscribe((res: any) => {
           //   console.log(res)
           //   this.selected = this.getChoiceUser(res)

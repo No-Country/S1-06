@@ -17,6 +17,7 @@ export class CrearDesafioComponent implements OnInit {
   descripcion!: string
   lenguaje!: string
   nivel!: string
+  duration!: string
   categories!:Array<any>
   //Validación
   inicio: boolean = true
@@ -130,7 +131,8 @@ export class CrearDesafioComponent implements OnInit {
       title: this.titulo,
       description: this.descripcion,
       category: this.lenguaje,
-      level: this.nivel
+      level: this.nivel,
+      duration: this.duration
     }
       Swal.fire({
         title: 'Creando...',

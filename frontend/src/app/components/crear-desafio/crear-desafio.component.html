@@ -18,14 +18,14 @@
         <!--Duración del desafío-->
         <div class="col-md-6">
           <label for="inputAddress2" class="form-label fw-bold">Duración del desafío:</label>
-          <select id="inputState" class="form-select" name="duracion" required>
-            <option>5 Minutos</option>
-            <option>10 Minutos</option>
-            <option>15 Minutos</option>
-            <option>25 Minutos</option>
-            <option>30 Minutos</option>
-            <option>45 Minutos</option>
-            <option>60 Minutos</option>
+          <select id="inputState" class="form-select" name="duracion" [(ngModel)]="duration" required>
+            <option value="5 Minutos">5 Minutos</option>
+            <option value="10 Minutos">10 Minutos</option>
+            <option value="15 Minutos">15 Minutos</option>
+            <option value="25 Minutos">25 Minutos</option>
+            <option value="30 Minutos">30 Minutos</option>
+            <option value="45 Minutos">45 Minutos</option>
+            <option value="60 Minutos">60 Minutos</option>
           </select>
 
         </div>
