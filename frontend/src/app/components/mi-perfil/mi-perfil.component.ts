@@ -38,19 +38,19 @@ export class MiPerfilComponent implements OnInit {
   ) { }
 
   ngOnInit (): void {
-    this._Activatedroute.paramMap.subscribe(params => {
-      this.user_id = params.get('company_id') ?? "";
-      this.applicantService.getById(this.user_id).subscribe((res: any) => {
-        const user = res
-      this.email = user.email ?? ''
-      this.name = user.applicant_profile.first_name + ' ' + user.applicant_profile.last_name
-      this.phone = user.applicant_profile.phone
-      this.setLocation(user.applicant_profile.location)
-      this.applicantService.getChallenges(user.id).subscribe((res: any) => {
-        this.challengesApplicant = res
-      })
-      })
-    });
+    // this._Activatedroute.paramMap.subscribe(params => {
+    //   this.user_id = params.get('company_id') ?? "";
+    //   this.applicantService.getById(this.user_id).subscribe((res: any) => {
+    //     const user = res
+    //   this.email = user.email ?? ''
+    //   this.name = user.applicant_profile.first_name + ' ' + user.applicant_profile.last_name
+    //   this.phone = user.applicant_profile.phone
+    //   this.setLocation(user.applicant_profile.location)
+    //   this.applicantService.getChallenges(user.id).subscribe((res: any) => {
+    //     this.challengesApplicant = res
+    //   })
+    //   })
+    // });
     this.typeUser = this.authService.getTypeUser()
     this.currentUser = this.authService.getCurrentUser()
     this.email = this.currentUser.email ?? ''
