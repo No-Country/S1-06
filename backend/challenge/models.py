@@ -15,10 +15,21 @@ class Challenge(models.Model):
         ('Semisenior', 'Semisenior'),
         ('Senior', 'Senior')
     )
+    DURATION = (
+        ('5 Minutos', '5 Minutos'),
+        ('10 Minutos', '10 Minutos'),
+        ('15 Minutos', '15 Minutos'),
+        ('25 Minutos', '25 Minutos'),
+        ('30 Minutos', '30 Minutos'),
+        ('45 Minutos', '45 Minutos'),
+        ('60 Minutos', '60 Minutos')
+    )
+
     title = models.CharField(_('title'), max_length=255)
     description = models.TextField(_('description'))
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     level = models.CharField(max_length=255, choices=LEVELS)
+    duration = models.CharField(max_length=255, choices=DURATION, default="5 Minutos")
     created_by = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,

@@ -53,7 +53,8 @@ class ChallengeSerializer(serializers.ModelSerializer):
             'category',
             'level',
             'questions',
-            'created_by'
+            'created_by',
+            'duration'
         )
         extra_kwargs = {
             'category': {'write_only': True},
