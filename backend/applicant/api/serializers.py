@@ -7,7 +7,7 @@ from users.models import Location
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ('country', 'city', 'postal_code')
+        fields = ('country', 'city', 'postal_code', 'province')
         ref_name = 'ApplicantLocation'
 
 
@@ -22,6 +22,7 @@ class ApplicantProfileSerializer(serializers.ModelSerializer):
             'phone',
             'birthday',
             'location',
+            'description'
         )
 
 

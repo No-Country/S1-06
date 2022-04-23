@@ -9,6 +9,7 @@ class ApplicantProfile(Profilable, models.Model):
         related_name='applicant_profile',
         on_delete=models.CASCADE
     )
+    description = models.CharField(default="", blank=True, max_length=255)
     birthday = models.DateField(blank=True, null=True)
     location = models.OneToOneField(
         Location,
