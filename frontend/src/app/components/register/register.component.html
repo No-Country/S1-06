@@ -42,6 +42,13 @@
         name="description" [(ngModel)]="description"></textarea>
     </div>
 
+    <!--Phone-->
+    <div class="col-md-4">
+      <label for="inputCountry" class="form-label text-white">Telefono *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputPhone" placeholder="Telefono"
+        autocomplete="off" required name="phone" [(ngModel)]="phone">
+    </div>
+
     <!--País-->
     <div class="col-md-4">
       <label for="inputCountry" class="form-label text-white">País *</label>
@@ -50,19 +57,25 @@
     </div>
 
     <!--Provincia-->
-    <div class="col-md-6">
+    <div class="col-md-4">
       <label for="inputCity" class="form-label text-white">Ciudad *</label>
       <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Ciudad" autocomplete="off"
         required name="city" [(ngModel)]="city">
     </div>
 
     <!--Código postal-->
-    <div class="col-md-2">
+    <div class="col-md-4">
+      <label for="inputProvince" class="form-label text-white">Provincia *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputProvince" placeholder="Provincia"
+        autocomplete="off" required name="code" [(ngModel)]="province">
+    </div>
+
+    <!--Código postal-->
+    <div class="col-md-4">
       <label for="inputZip" class="form-label text-white">Código postal *</label>
       <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Código postal"
         autocomplete="off" required name="code" [(ngModel)]="postalCode">
     </div>
-
     <!--Contraseña-->
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label text-white">Contraseña *</label>
@@ -237,7 +250,7 @@
         así también la violación directa o indirecta de los derechos de propiedad intelectual de Code&Co y/o de
         cualquier tercero, incluyendo clientes de Code&Co ;
         e) publicar mensajes que puedan herir y/o afectar la sensibilidad del resto de los Usuarios y/o de cualquier
-        tercero, incluyendo clientes de Code&Co ; 
+        tercero, incluyendo clientes de Code&Co ;
         f) promocionar, comercializar, vender, publicar y/u ofrecer cualquier clase de productos, servicios y/o
         actividades por intermedio de o a través de la utilización de los Canales, excepto aquellas expresamente
         permitidas por Code&Co ;

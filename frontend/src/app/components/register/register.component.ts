@@ -20,8 +20,9 @@ export class RegisterComponent implements OnInit {
   city!: string;
   postalCode!: string;
   password!:string;
-  tpassword!:string;
-
+  tpassword!: string;
+  province!: string;
+  phone!: string;
   //Confirmar contraseña
   checkpass!:boolean
 
@@ -38,10 +39,13 @@ export class RegisterComponent implements OnInit {
     const profile = {
       first_name: this.name,
       last_name: this.lastName,
+      description: this.description,
+      phone: this.phone,
       location: {
         country: this.country,
         city: this.city,
-        postal_code: this.postalCode
+        postal_code: this.postalCode,
+        province: this.province
       }
     }
     let applicant = {
