@@ -1,3 +1,5 @@
+import { AppComponent } from './../../app.component';
+import { ApplicantService } from 'src/app/services/applicant.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfiles.component.css']
 })
 export class PerfilesComponent implements OnInit {
+  profiles: Array<any> = []
+  constructor(private applicantService: ApplicantService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.applicantService.getApplicants().subscribe((res: any) => {
+      this.profiles = res
+    })
   }
 
 }
