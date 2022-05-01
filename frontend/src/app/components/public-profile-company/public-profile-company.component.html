@@ -11,14 +11,23 @@
     <div class="col-md-4">
 
       <div class="card shadow bg-light mb-3 mt-4 border-warning">
-        <div class="card-header bg-transparent fw-bold text-center text-dark">Nombre: {{name}}</div>
-        <div class="card-body">
-          <p class="card-text text-dark">Correo electrónico: {{email}}</p>
-          <p class="card-text text-dark " *ngIf="isNotAdmin()">Telefono: {{phone}}</p>
-          <p class="card-text text-dark" *ngIf="descriptionExits()">Descripción: {{description}}</p>
-          <p class="card-text text-dark text-center mt-4" *ngIf="isNotAdmin()">País: {{country}},Provincia:
-            {{province}}, Ciudad: {{city}},
-            Código postal: {{code}} )</p>
+        <div class="card-header bg-transparent fw-bold text-center text-dark">{{name}}</div>
+        <div class="card-body text-dark">
+          <p class="text-dark fw-bold">
+            Contacto:
+          </p>
+            <ul>
+              <li>{{email}}</li>
+              <li *ngIf="isNotAdmin()">{{phone}}</li>
+            </ul>
+          
+          <p class="card-text text-dark" *ngIf="descriptionExits()"><b>Descripción:</b></p>
+          <p class="card-text text-dark" *ngIf="descriptionExits()">{{description}}</p>
+          
+          <p class="card-text text-dark fw-bold" *ngIf="isNotAdmin()">Ubicación de las oficinas:</p>
+          <p class="card-text text-dark text-center">
+            {{country}}.
+          </p>
 
         </div>
 
@@ -36,7 +45,7 @@
     <h3 class="text-light text-center fw-bold display-4 mt-3">DESAFÍOS ACTIVOS</h3>
   </div>
 
-  <div class="container-fluid centrar">
+  <div class="container-fluid centrar mb-4">
     <div class="container m-2">
 
       <div class="row">

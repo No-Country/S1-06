@@ -9,7 +9,7 @@
   <div class="row m-1">
     <div class="col-md-4" *ngFor="let profile of profiles">
       <div class="card shadow bg-light mb-3 mt-4 border-warning">
-        <div class="card-header fw-bold text-center"><a [routerLink]="['/mi-perfil']"
+        <div class="card-header fw-bold text-center"><a
             class="text-warning">{{profile.applicant_profile.first_name }} {{profile.applicant_profile.last_name}}</a>
         </div>
         <div class="card-body text-dark text-center">
@@ -18,10 +18,10 @@
           </p>
         </div>
         <div class="card-footer bg-transparent text-center text-dark fw-bold">Ubicación:
-          {{profile.applicant_profile.location.city}},{{profile.applicant_profile.location.province}},
-          {{profile.applicant_profile.location.country}})
+          {{profile.applicant_profile.location.city}}, {{profile.applicant_profile.location.province}},
+           {{profile.applicant_profile.location.country}}
         </div>
-        <span class="text-center mt-3">
+        <span class="text-center mt-3 mb-3">
           <button class="btn btn-warning fw-bold" style="margin-right: 5px;"
             [routerLink]="['/perfil/user/', profile.id]">
             Ver perfil</button>

@@ -71,7 +71,7 @@ export class CompanyRegisterComponent implements OnInit {
     this.service.create(applicant).subscribe(_ => {
       Swal.fire({
         icon: "success",
-        title: "Cuenta creada exitosamente!"
+        title:"¡Cuenta creada exitosamente!"
       }).then(_ => { this.router.navigate(['/login'])})
     })
 

@@ -11,13 +11,14 @@
     <div class="col-md-4">
 
       <div class="card shadow bg-light mb-3 mt-4 border-warning">
-        <div class="card-header bg-transparent fw-bold text-center text-dark">Nombre: {{name}}</div>
+        <div class="card-header bg-transparent fw-bold text-center text-dark">{{name}}</div>
         <div class="card-body">
-          <p class="card-text text-dark">Correo electrónico: {{email}}</p>
-          <p class="card-text text-dark ">Telefono: {{phone}}</p>
-          <p class="card-text text-dark text-center mt-4">País: {{country}},Provincia:
-            {{province}}, Ciudad: {{city}},
-            Código postal: {{code}} )</p>
+          <p class="card-text text-dark fw-bold">Contacto:</p>
+          <ul class="text-dark">
+            <li>{{email}}</li>
+            <li>{{phone}}</li>
+          </ul>
+          <div class="card-footer text-dark text-center mt-4"><b>Ubicación:</b>{{city}}, {{province}}, {{country}}.</div>
         </div>
 
       </div>

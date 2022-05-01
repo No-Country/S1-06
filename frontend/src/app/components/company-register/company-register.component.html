@@ -1,7 +1,10 @@
 <div class="container-fluid row mt-5 pt-1">
+
+  <!--Título-->
   <div class="col-md-12 text-white  ">
     <h1 class="text-center fw-bold display-5">SOLICITUD DE CREACIÓN DE CUENTA</h1>
   </div>
+
 </div>
 
 <div class="container mt-3 mb-4 pb-3">
@@ -21,8 +24,8 @@
 
     <!--Razón social-->
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label text-white">Nombre*</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputName" placeholder="Nombre" autocomplete="off"
+      <label for="inputEmail4" class="form-label text-white">Razón social *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputName" placeholder="Razón social" autocomplete="off"
         required name="Nombre" [(ngModel)]="name">
     </div>
 
@@ -72,6 +75,13 @@
         autocomplete="off" required name="state" [(ngModel)]="state">
     </div>
 
+     <!--Ciudad-->
+     <div class="col-md-4">
+      <label for="inputZip" class="form-label text-white">Ciudad *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Ciuadad" autocomplete="off"
+        required name="street" [(ngModel)]="city">
+    </div>
+
     <!--Código postal-->
     <div class="col-md-4">
       <label for="inputZip" class="form-label text-white">Código postal *</label>
@@ -79,12 +89,8 @@
         autocomplete="off" required name="postalCode" [(ngModel)]="postalCode">
     </div>
 
-    <!--Calle-->
-    <div class="col-md-4">
-      <label for="inputZip" class="form-label text-white">Ciudad *</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputZip" placeholder="Ciuadad" autocomplete="off"
-        required name="street" [(ngModel)]="city">
-    </div>
+   
+
     <!--Razón de la solicitud-->
     <h4 class="text-white mt-3">¿Por qué quieres una cuenta de empresa?</h4>
     <div class="col-md-12">
@@ -93,7 +99,6 @@
         name="application" [(ngModel)]="application" required=""></textarea>
     </div>
 
-
     <!--Términos y condiciones-->
     <div class="col-md-12">
       <div class="form-check text-white">
@@ -101,20 +106,20 @@
           data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-warning">términos y condiciones *</a>
       </div>
     </div>
+
     <div class="col-2"></div>
 
     <div class="col-12 centrar">
       <!--Botón volver-->
       <div class="d-grid gap-2 col-3 mx-3">
-        <button class="btn btn-secondary text-white" type="button" style="font-weight: bold"
-          onclick="window.history.go(-1);">VOLVER</button>
+        <button class="btn btn-secondary text-white fw-bold" type="button" onclick="window.history.go(-1);">VOLVER</button>
       </div>
       <!--Botón aceptar-->
-      <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white " style="font-weight: bold"
+      <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white fw-bold"
           type="submit" [disabled]="!f.form.valid || terminos == false || checkpass == false">ACEPTAR</button></div>
     </div>
 
-    <div class="col-md-12 text-white">¿Ya tienes una cuenta de empresa? <a [routerLink]='["/login"]'
+    <div class="col-md-12 text-white">¿Ya tiene una cuenta de empresa? <a [routerLink]='["/login"]'
         class="text-warning"> Inicia sesión.</a></div>
   </form>
 </div>
@@ -122,7 +127,7 @@
 <!--Footer-->
 <app-footer></app-footer>
 
-<!-- Modal -->
+<!-- Modal términos y condiciones-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -653,7 +658,7 @@
         Esta Política de Privacidad fue actualizada por última vez el 22 de abril de 2022.
       </div>
       <div class="modal-footer bg-dark text-light centrar">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="font-weight: bold">ACEPTAR</button>
+        <button type="button" class="btn btn-warning fw-bold" data-bs-dismiss="modal">ACEPTAR</button>
       </div>
     </div>
   </div>

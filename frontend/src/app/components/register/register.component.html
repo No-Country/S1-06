@@ -1,8 +1,10 @@
 <div class="container mb-2" style="width:max-content">
+
   <!--Título-->
   <div class="container-fluid text-white centrar mt-5 rounded">
     <h1 class="fw-bold display-5">CREA TU CUENTA</h1>
   </div>
+
 </div>
 
 <div class="container mt-0 mb-4 pb-3">
@@ -44,7 +46,7 @@
 
     <!--Phone-->
     <div class="col-md-4">
-      <label for="inputCountry" class="form-label text-white">Telefono *</label>
+      <label for="inputCountry" class="form-label text-white">Teléfono *</label>
       <input type="text" class="form-control bg-dark text-white" id="inputPhone" placeholder="Telefono"
         autocomplete="off" required name="phone" [(ngModel)]="phone">
     </div>
@@ -58,16 +60,16 @@
 
     <!--Provincia-->
     <div class="col-md-4">
-      <label for="inputCity" class="form-label text-white">Ciudad *</label>
-      <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Ciudad" autocomplete="off"
-        required name="city" [(ngModel)]="city">
-    </div>
-
-    <!--Código postal-->
-    <div class="col-md-4">
       <label for="inputProvince" class="form-label text-white">Provincia *</label>
       <input type="text" class="form-control bg-dark text-white" id="inputProvince" placeholder="Provincia"
         autocomplete="off" required name="code" [(ngModel)]="province">
+    </div>
+
+    <!--Ciudad-->
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label text-white">Ciudad *</label>
+      <input type="text" class="form-control bg-dark text-white" id="inputCity" placeholder="Ciudad" autocomplete="off"
+        required name="city" [(ngModel)]="city">
     </div>
 
     <!--Código postal-->
@@ -100,24 +102,29 @@
     </div>
 
     <div class="col-12 centrar">
+
       <!--Botón volver-->
       <div class="d-grid gap-2 col-3 mx-3">
         <button class="btn btn-secondary text-white" type="button" style="font-weight: bold"
           onclick="window.history.go(-1);">VOLVER</button>
       </div>
+
       <!--Botón aceptar-->
       <div class="d-grid gap-2 col-3"> <button class="btn btn-warning text-white " style="font-weight: bold"
-          type="submit" [disabled]="!f.form.valid || terminos == false || checkpass == false">ACEPTAR</button></div>
+          type="submit" [disabled]="!f.form.valid || terminos == false || checkpass == false">ACEPTAR</button>
+      </div>
     </div>
-    <div class="col-md-12 text-white">¿Ya tienes una cuenta? <a [routerLink]='["/login"]' class="text-warning">
+
+    <div class="col-md-12 text-white">¿Ya tienes una cuenta?<a [routerLink]='["/login"]' class="text-warning">
         Inicia sesión.</a></div>
   </form>
+
 </div>
 
 <!--Footer-->
 <app-footer class="fixed-bottom"></app-footer>
 
-<!-- Modal -->
+<!-- Modal términos y condiciones-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
