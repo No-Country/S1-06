@@ -1,4 +1,3 @@
-# S1-06
 Code&Co is a website about programming challenges which have professional possibility. The page has two types of users: programmers and companies.
 
 A programmer is able to do programming challenges and he/she has a historial where he/she is able to see his/her done challenges.
